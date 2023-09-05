@@ -91,12 +91,17 @@ def login1(request):
     elif data is not None and data.is_superuser==0:
         a=tbl_accounts.objects.get(username=data.username)
         if a.account_type=="user":
-            return redirect('/user1/')
+            return redirect('/userHome/')
         elif a.account_type=="rest_admin":
-            return redirect('/res/')
+            return redirect('/restaurentHome/')
     else:
         return HttpResponse('invalid_user')
-
+def restaurentHome(request):
+    a=request.session['username']
+    return render(request,'restaurant.html',{'x':a})
+def userHome(request):
+    a=request.session['username']
+    return render(request,'user1.html',{'x':a})
 def account2(request):
     p1=User()
     p2=restaurant_account()
