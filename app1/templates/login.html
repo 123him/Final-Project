@@ -25,8 +25,8 @@
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-
-	<div class="wrap">
+	<div>
+	<div class="wrap ">
 		<div class="container">
 			<div class="row justify-content-between">
 				<div class="col-12 col-md d-flex align-items-center">
@@ -48,7 +48,7 @@
 	</div>
 	
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-		<div class="container">
+		<div class="container ">
 			<a class="navbar-brand" href="/index/">Taste.<span>it</span></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
@@ -67,6 +67,7 @@
 			</div>
 		</div>
 	</nav>
+	
 	<!-- END nav -->
 	
 	 <!-- <section class="hero-wrap">
@@ -84,9 +85,9 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 
-			<div class="slider-item js-fullheight image2" >
+			<!-- <div class="slider-item js-fullheight image2" >
 				<div class="overlay"></div>
 				<div class="container">
 					<div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
@@ -95,45 +96,44 @@
 								<span class="subheading">Taste.it Restaurant</h2></span>
 								<h1>Best Quality</h1>
 								<span class="subheading-2 sub">Food</span>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section> -->
+	</section>
 
 	
-
+	
 	<section class="ftco-section ftco-wrap-about ftco-no-pb ftco-no-pt" style="margin-top: 200px;">
 		<div class="container">
 			<div class="row no-gutters">
 				<div class="col-sm-4 p-4 p-md-5 d-flex align-items-center justify-content-center bg-primary">
-					<form action="/create/" class="appointment-form">
-						<h3 class="mb-3">Login</h3>
+					<form action="/login1/" method="post" class="appointment-form">
+						{% csrf_token %}
+						<h3 class="mb-3" >Login</h3>
             
 						<div class="row">
 							<div class="col-md-12">
-								<div class="form-group">
-									<input type="email" class="form-control" placeholder="Email" name="email">
+								<div class="form-group" style="width: 300px;">
+									<input type="text" class="form-control" placeholder="Username" name="user">
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="form-group">
-									<input type="password" class="form-control" placeholder="Password" name="password">
+									<input type="password" class="form-control" placeholder="Password" name="pwd">
 								</div>
 							</div>
-							<!-- <div class="col-md-12">
-								<div class="form-group">
-									<input type="password" class="form-control" placeholder="Password" name="password">
-								</div>
-							</div>
+
 
 							<div class="col-md-12">
 								<div class="form-group">
 									<input type="password" class="form-control" placeholder="Repeat Password" name="repeat_password">
 								</div>
-							</div> -->
+							</div>
+							
+						
 							
 							
 							
@@ -150,11 +150,12 @@
 						</div>
             <div>
               <button type="button" class="btn btn-white " >Cancel</button> 
-              <span class="psw" style="color: black;">Forgot <a href="#" style="color:rgb(235, 238, 241); " >password?</a></span>
+              <span class="psw" style="color: rgb(5, 5, 5);">Forgot <a href="#" style="color:rgb(235, 238, 241); " >password?</a></span>
             </div>
 					</form>
 				</div>
-				<div class="col-sm-8 wrap-about py-5 ftco-animate img image3" >
+				<div style="padding-left: 20px ;" class="col-sm-8 wrap-about py-5 ftco-animate img aimg10">
+					
 					<div class="row pb-5 pb-md-0">
 						<div class="col-md-12 col-lg-7">
 							<div class="heading-section mt-5 mb-4">
@@ -163,9 +164,9 @@
 									<h2 class="mb-4">Welcome to Taste.it</h2>
 								</div>
 							</div>
-							<div class="pl-lg-3 ml-md-5">
+							 <!-- <div class="pl-lg-3 ml-md-5">
 								<p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</div>

@@ -17,15 +17,30 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from app1 import views
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index),
-    path('chef/',views.chef),
- 
+    path('about/',views.about),
+    path('menu/',views.menu),
+    path('admin1/',views.admin1),
+    path('user1/',views.user1),
+    path('res/',views.restur),
+    path('login/',views.login),
+    path('table/',views.table),
+    
+    
+   path('chef/',views.chef),
+   path('reservation/',views.reservation),
+    
+    path('account/',views.account),
     path('login1/',views.login1),
-    path('ad/',views.admin),
-    path('user/',views.user),
-    path('res/',views.restur)
+    path('account2/',views.account2),
     
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

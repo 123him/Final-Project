@@ -58,18 +58,17 @@
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active"><a href="/index/" class="nav-link">Home</a></li>
 					<li class="nav-item"><a href="/about/" class="nav-link">About</a></li>
-					<li class="nav-item"><a href="/chef/" class="nav-link">Chef</a></li>
 					<li class="nav-item"><a href="/menu/" class="nav-link">Menu</a></li>
-					<li class="nav-item"><a href="/reservation/" class="nav-link">Reservation</a></li>
-					<li class="nav-item"><a href="/blog/" class="nav-link">Blog</a></li>
-					<li class="nav-item"><a href="/login1/" class="nav-link">Login</a></li>
-					<li class="nav-item"><a href="/ad/" class="nav-link">Admin</a></li>
-					<li class="nav-item"><a href="/user/" class="nav-link">User</a></li>
+					<li class="nav-item"><a href="/admin1/" class="nav-link">Admin</a></li>
+					<li class="nav-item"><a href="/user1/" class="nav-link">User</a></li>
 					<li class="nav-item"><a href="/res/" class="nav-link">Restaurant</a></li>
-					
+				 
+					<li class="nav-item"><a href="/login/" class="nav-link">Login</a></li>
+					<li class="nav-item"><a href="/table/" class="nav-link">table</a></li>
 
 					
 				</ul>
+				+-`
 			</div>
 		</div>
 	</nav>
@@ -115,33 +114,73 @@
 		<div class="container">
 			<div class="row no-gutters">
 				<div class="col-sm-4 p-4 p-md-5 d-flex align-items-center justify-content-center bg-primary">
-					<form action="/create/" class="appointment-form">
+					<form action="/account/" method="post" enctype="multipart/form-data" class="appointment-form">
+						{% csrf_token %}
 						<h3 class="mb-3">Create Account</h3>
 						<div class="row">
 							<div class="col-md-12">
 								<div class="form-group">
-									<input type="name" class="form-control" placeholder="Name" name="name">
-								</div>
-							</div>
-							<div class="col-md-12">
-								<div class="form-group">
-									<input type="email" class="form-control" placeholder="Email" name="email">
-								</div>
-							</div>
-							<div class="col-md-12">
-								<div class="form-group">
-									<input type="password" class="form-control" placeholder="Password" name="password">
+									<input type="name" class="form-control" placeholder="First Name" name="fname">
 								</div>
 							</div>
 
 							<div class="col-md-12">
 								<div class="form-group">
-									<input type="password" class="form-control" placeholder="Repeat Password" name="repeat_password">
+									<input type="name" class="form-control" placeholder="Last Name" name="lname">
+								</div>
+							</div>
+
+							<div class="col-md-12">
+								<div class="form-group">
+									<input type="name" class="form-control" placeholder="Gender" name="gender">
+								</div>
+							</div>
+
+							<div class="col-md-12">
+								<div class="form-group">
+									<input type="name" class="form-control" placeholder="Phone" name="ph">
+								</div>
+							</div>
+							<div  class="col-md-12" >
+								<div class="form-group" >
+									<input style="width: 277px;" type="email" class="form-control" placeholder="Email" name="mail" >
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Address" name="adrs">
+								</div>
+							</div>
+
+							<div class="col-md-12">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="District" name="district">
 								</div>
 							</div>
 							
-							
-							
+							<div class="col-md-12">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="State" name="state">
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Username" name="user">
+								</div>
+							</div>
+
+							<div class="col-md-12">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Password" name="pwd">
+								</div>
+							</div>
+
+							<div class="col-md-12">
+								
+								<input style="margin-bottom: 30px; color:rgb(78, 133, 61); " type="file"  placeholder="Photo" name="photo">
+								
+							</div>
+
 							<div class="col-md-12">
 								<div class="form-group">
 									<input type="submit" value="Create Account" class="btn btn-white py-3 px-4">
@@ -150,7 +189,7 @@
 						</div>
 					</form>
 				</div>
-				<div class="col-sm-8 wrap-about py-5 ftco-animate img image3" >
+				<div class="col-sm-8 wrap-about py-5 ftco-animate img image3 img3style"  >
 					<div class="row pb-5 pb-md-0">
 						<div class="col-md-12 col-lg-7">
 							<div class="heading-section mt-5 mb-4">

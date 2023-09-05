@@ -377,136 +377,7 @@ mark,
   font-size: 90%;
   text-transform: uppercase; }
 
-.image1{
-  background-image: url(../images/bg_1.jpg);
-}
-.image2{
-  background-image: url(../images/bg_2.jpg);
-}
-.image3{
-  background-image: url(../images/about.jpg);
-}
-.image4{
-  background-image: url(../images/bg_3.jpg);
-}
-.image5{
-  background-image: url(../images/breakfast-1.jpg);
-}
-.image6{
-  background-image: url(../images/breakfast-2.jpg)
-  ;
-}
-.image7{
-  background-image: url(../images/breakfast-3.jpg);
-}
-.image8{
-  background-image: url(../images/lunch-1.jpg);
-}
-.image9{
-  background-image:  url(../images/lunch-2.jpg);
-}
-.image10{
-  background-image: url(../images/lunch-3.jpg);
-}
-.image11{
-  background-image: url(../images/dinner-1.jpg);
-}
-.image12{
-  background-image: url(../images/dinner-2.jpg);
-}
-.image13{
-  background-image: url(../images/dinner-3.jpg);
-}
-.image14{
-  background-image: url(../images/dessert-1.jpg);
-}
-.image15{
-  background-image: url(../images/dessert-2.jpg);
-}
-.image16{
-  background-image: url(../images/dessert-3.jpg);
-}
-.image17{
-  background-image: url(../images/wine-1.jpg);
-}
-.image18{
-  background-image: url(../images/wine-2.jpg);
-}
-.image19{
-  background-image: url(../images/wine-3.jpg);
-}
-.image20{
-  background-image: url(../images/drink-1.jpg);
-}
-.image21{
-  background-image: url(../images/drink-2.jpg);
-}
-.image22{
-  background-image: url(../images/drink-3.jpg);
-}
-.image23{
-  background-image: url(../images/bg_5.jpg);
-}
-.image24{
-  background-image: url(../images/person_1.jpg);
-}
-.image25{
-  background-image:  url(../images/person_1.jpg);
-}
-.image26{
-  background-image: url(../images/person_1.jpg);
-}
-.image27{
-  background-image: url(../images/person_1.jpg);
-}
-.image28{
-  background-image: url(../images/person_1.jpg);
-}
-.image29{
-  background-image: url(../images/chef-4.jpg);
-}
-.image30{
-  background-image: url(../images/chef-2.jpg);
-}
-.image31{
-  background-image:  url(../images/chef-3.jpg);
-}
-.image32{
-  background-image: url(../images/chef-1.jpg);
-}
-.image33{
-  background-image:  url(../images/bg_6.jpg);
-}
-.image34{
-  background-image: url(../images/bg_4.jpg);
-}
-.image35{
-  background-image: url('../images/image_1.jpg');
-}
-.image36{
-  background-image: url('../images/image_2.jpg');
-}
-.image37{
-  background-image: url('../images/image_3.jpg');
-}
-.image38{
-  background-image: url(../images/insta-1.jpg);
-}
-.image39{
-  background-image: url(../images/insta-2.jpg);
-}
-.image40{
-  background-image:  url(../images/insta-3.jpg);
-}
-.image41{
-  background-image: url(../images/insta-4.jpg);
-}
-.image42{
-  background-image: url(../images/insta-5.jpg);
-}
-.image43{
-  background-image: url(../images/insta-6.jpg);
-}
+
 .blockquote {
   margin-bottom: 1rem;
   font-size: 1.25rem; }
@@ -10199,11 +10070,11 @@ span.psw {
   float: none;
 }
 
-/* 
-admin page */
+
 
 .aimg{
-  background-image: url('../images/bg_5.jpg');
+  background-image: url(../images/resimg.jpeg);
+  height: 0px;
 }
 .aimg1{
   background-image:  url(../images/chef-4.jpg);
@@ -10225,4 +10096,243 @@ admin page */
 }
 .aimg7{
   background-image:  url(../images/insta-6.jpg);
+}
+.aimg8{
+  background-image: url(../images/userimg.jpeg);
+}
+
+.aimg9{
+  background-image: url(../images/adminimg.jpg);
+}
+
+/* table */
+.table{
+  
+  width: 100%;
+  height: 200px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  
+}
+
+table,th,td,thead,tr{
+  border: 1px solid #e4606d;
+  
+}
+
+.thead{
+  text-align: center;
+  font-size: 20px;
+  background-color:  #e4606d;
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+.tbody{
+  text-align: center;
+  background-color:;
+  
+
+}
+tr:hover{
+  background-color: #ed969e;
+}
+
+.img1{
+  background-image: url(../images/lognav.jpeg);
+}
+
+.image1{
+  background-image: url(../images/bg_1.jpg);
+}
+.image2{
+  background-image: url(../images/bg_2.jpg);
+}
+.image3{
+  background-image: url(../images/about.jpg);
+  
+  
+}
+
+.aimg10{
+  background-image: url(../images/logimg.jpg);
+}
+
+.image4{
+  background-image: url(../images/bg_3.jpg);
+}
+.image5{
+  background-image: url(../images/breakfast-1.jpg);
+}
+.image6{
+  background-image: url(../images/breakfast-2.jpg)
+  ;
+}
+.image7{
+  background-image: url(../images/breakfast-3.jpg);
+}
+.image8{
+  background-image: url(../images/lunch-1.jpg);
+}
+.image9{
+  background-image:  url(../images/lunch-2.jpg);
+}
+.image10{
+  background-image: url(../images/lunch-3.jpg);
+}
+.image11{
+  background-image: url(../images/dinner-1.jpg);
+}
+.image12{
+  background-image: url(../images/dinner-2.jpg);
+}
+.image13{
+  background-image: url(../images/dinner-3.jpg);
+}
+.image14{
+  background-image: url(../images/dessert-1.jpg);
+}
+.image15{
+  background-image: url(../images/dessert-2.jpg);
+}
+.image16{
+  background-image: url(../images/dessert-3.jpg);
+}
+.image17{
+  background-image: url(../images/wine-1.jpg);
+}
+.image18{
+  background-image: url(../images/wine-2.jpg);
+}
+.image19{
+  background-image: url(../images/wine-3.jpg);
+}
+.image20{
+  background-image: url(../images/drink-1.jpg);
+}
+.image21{
+  background-image: url(../images/drink-2.jpg);
+}
+.image22{
+  background-image: url(../images/drink-3.jpg);
+}
+.image23{
+  background-image: url(../images/bg_5.jpg);
+}
+.image24{
+  background-image: url(../images/person_1.jpg);
+}
+.image25{
+  background-image:  url(../images/person_1.jpg);
+}
+.image26{
+  background-image: url(../images/person_1.jpg);
+}
+.image27{
+  background-image: url(../images/person_1.jpg);
+}
+.image28{
+  background-image: url(../images/person_1.jpg);
+}
+.image29{
+  background-image: url(../images/chef-4.jpg);
+}
+.image30{
+  background-image: url(../images/chef-2.jpg);
+}
+.image31{
+  background-image:  url(../images/chef-3.jpg);
+}
+.image32{
+  background-image: url(../images/chef-1.jpg);
+}
+.image33{
+  background-image:  url(../images/bg_6.jpg);
+}
+.image34{
+  background-image: url(../images/bg_4.jpg);
+}
+.image35{
+  background-image: url('../images/image_1.jpg');
+}
+.image36{
+  background-image: url('../images/image_2.jpg');
+}
+.image37{
+  background-image: url('../images/image_3.jpg');
+}
+.image38{
+  background-image: url(../images/insta-1.jpg);
+}
+.image39{
+  background-image: url(../images/insta-2.jpg);
+}
+.image40{
+  background-image:  url(../images/insta-3.jpg);
+}
+.image41{
+  background-image: url(../images/insta-4.jpg);
+}
+.image42{
+  background-image: url(../images/insta-5.jpg);
+}
+.image43{
+  background-image: url(../images/insta-6.jpg);
+}
+/* 
+about images */
+
+.aimg1{
+  background-image:  url('../images/bg_5.jpg');
+}
+
+.aimg2{
+  background-image: url(../images/bg_6.jpg);
+  }
+
+.aimg3{
+  background-image: url(../images/bg_4.jpg);
+  }
+
+.aimg4{
+  background-image:  url(../images/bg_4.jpg);
+}
+
+.aimg5{
+  background-image:  url(images/bg_5.jpg);
+  }
+
+.aimg6{
+  background-image: url(../images/person_1.jpg);
+  }
+
+.aimg7{
+  background-image: url(../images/insta-1.jpg);
+}
+
+.aimg8{
+  background-image: url(../images/insta-2.jpg);
+}
+
+.aimg9{
+  background-image:  url(../images/insta-3.jpg);
+
+}
+
+.aimg100{
+  background-image: url(../images/insta-4.jpg);
+}
+
+.aimg11{
+  background-image: url(../images/insta-5.jpg);
+}
+
+.aimg12{
+  background-image: url(../images/insta-6.jpg);
+}
+
+/* menu images */
+
+.mimg1{
+  background-image: url('../images/bg_5.jpg');
 }
