@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth import authenticate
  
-from app1.models import user_account,restaurant_account
+from app1.models import user_account,restaurant_account,tbl_accounts
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.files.storage import FileSystemStorage
@@ -48,7 +48,8 @@ def reservation(request):
 
 def account(request):
     p1=User()
-    p2=restaurant_account()
+    p2=user_account()
+    p3=tbl_accounts()
     p1.first_name=request.POST.get('fname')
     p1.last_name=request.POST.get('lname')
     p1.username=request.POST.get('user')
@@ -58,50 +59,7 @@ def account(request):
 
     p2.first_name=request.POST.get('fname')
     p2.last_name=request.POST.get('lname')
-    p2.restaurant_name=request.POST.get('restaurant')
-    p2.phone=request.POST.get('ph')
-    p2.email=request.POST.get('mail')
-    p2.location=request.POST.get('location')                 
-    p2.type_of_restaurant=request.POST.get('type')
-    p2.authirised_person=request.POST.get('person')
-    p2.no_of_staff=request.POST.get('staffs')
-    p2.status=request.POST.get('status+')
-    p2.username=request.POST.get('user')
-    photo=request.FILES['photo'] 
-    fs= FileSystemStorage()
-    filename=fs.save(photo.name,photo) 
-    uploaded_file_url=fs.url(filename)
-    p2.photo=uploaded_file_url
-    
-    p1.save()
-    p2.save()
-    return redirect('/login')
-
-def login1(request):
-    username=request.POST.get('user')
-    password=request.POST.get('pwd')
-    data=authenticate(username=username,password=password)
-    request.session['username']=username
-    if data is not None and data.is_superuser==1:
-        return redirect('/admin1')
-    elif data is not None and data.is_superuser==0:
-        return redirect('/user1')
-    else:
-        return HttpResponse('invalid_user')
-
-def account2(request):
-    p1=User()
-    p2=()
-    p1.first_name=request.POST.get('fname')
-    p1.last_name=request.POST.get('lname')
-    p1.username=request.POST.get('user')
-    password=request.POST.get('pwd')
-    p1.set_password(password)
-    p1.email=request.POST.get('mail')
-
-    p2.first_name=request.POST.get('fname')
-    p2.last_name=request.POST.get('lname')
-    p2.gende=request.POST.get('gender')
+    p2.gender=request.POST.get('gender')
     p2.phone=request.POST.get('ph')
     p2.email=request.POST.get('mail')
     p2.address=request.POST.get('adrs')                 
@@ -113,7 +71,66 @@ def account2(request):
     filename=fs.save(photo.name,photo) 
     uploaded_file_url=fs.url(filename)
     p2.photo=uploaded_file_url
+
+    p3.username=request.POST.get('user')
+    p3.firstname=request.POST.get('fname')
+    p3.account_type="user"
     
     p1.save()
     p2.save()
+    p3.save()
+    return redirect('/login')
+
+def login1(request):
+    username=request.POST.get('user')
+    password=request.POST.get('pwd')
+    data=authenticate(username=username,password=password)
+    request.session['username']=username
+    if data is not None and data.is_superuser==1:
+        return redirect('/admin1/')
+    elif data is not None and data.is_superuser==0:
+        a=tbl_accounts.objects.get(username=data.username)
+        if a.account_type=="user":
+            return redirect('/user1/')
+        elif a.account_type=="rest_admin":
+            return redirect('/res/')
+    else:
+        return HttpResponse('invalid_user')
+
+def account2(request):
+    p1=User()
+    p2=restaurant_account()
+    p3=tbl_accounts()
+    p1.first_name=request.POST.get('fname')
+    p1.last_name=request.POST.get('lname')
+    p1.username=request.POST.get('user')
+    password=request.POST.get('pwd')
+    p1.set_password(password)
+    p1.email=request.POST.get('mail')
+
+    p2.first_name=request.POST.get('fname')
+    p2.last_name=request.POST.get('lname')
+    p2.restaurant_name=request.POST.get('restaurant_name')
+    p2.phone=request.POST.get('ph')
+    p2.email=request.POST.get('mail')
+    p2.location=request.POST.get('location')                 
+    p2.type_of_restaurant=request.POST.get('type')
+    p2.no_of_staff=request.POST.get('staffs')
+    p2.username=request.POST.get('user')
+    p2.authirised_person=request.POST.get('authirised')
+    photo=request.FILES['photo'] 
+    fs= FileSystemStorage()
+    filename=fs.save(photo.name,photo) 
+    uploaded_file_url=fs.url(filename)
+    p2.photo=uploaded_file_url
+    p2.status=request.POST.get('status')
+
+    p3.username=request.POST.get('user')
+    p3.firstname=request.POST.get('fname')
+    p3.account_type="rest_admin"
+    
+    
+    p1.save()
+    p2.save()
+    p3.save()
     return redirect('/login')

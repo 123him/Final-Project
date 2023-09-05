@@ -90,3 +90,12 @@ class tbl_feedback(models.Model):
     
     class Meta:
         db_table='tbl_feedback'
+
+
+class tbl_accounts(models.Model):
+    username=models.CharField(max_length=50)
+    firstname=models.CharField(max_length=50)
+    account_type=models.CharField(max_length=50)
+
+    class Meta:
+        db_table='tbl_accounts'

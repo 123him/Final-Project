@@ -105,7 +105,7 @@
 			<div class="container">
 				<div class="row no-gutters">
 					<div class="col-sm-4 p-4 p-md-5 d-flex align-items-center justify-content-center bg-primary">
-						<form action="/account2/" method="post" class="appointment-form">
+						<form action="/account2/" method="post" enctype="multipart/form-data"  class="appointment-form">
 							{% csrf_token %}
 							<h3 class="mb-3" >Create Account</h3>
 				
@@ -152,7 +152,7 @@
 								
 								<div class="col-md-12">
 									<div class="form-group">
-										<input type="text" class="form-control" placeholder="Authirised Person" name="Authirised">
+										<input type="text" class="form-control" placeholder="Authirised Person" name="authirised">
 									</div>
 								</div>
 
