@@ -65,7 +65,7 @@ class food_menu(models.Model):
     menu_name=models.CharField(max_length=50)
     type=models.CharField(max_length=50)
     orgin=models.CharField(max_length=50)
-   
+    cusion=models.CharField(max_length=50)
     photo=models.CharField(max_length=500)
 
     class Meta:

@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth import authenticate
  
-from app1.models import user_account,restaurant_account,tbl_accounts
+from app1.models import user_account,restaurant_account,tbl_accounts,food_menu
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.files.storage import FileSystemStorage
@@ -140,3 +140,22 @@ def account2(request):
 
 def create_restaurant(request):
     return render(request,'create_restaurant.html')
+
+def addFood(request):
+    return render(request,'addfood.html')
+
+def foodmenu1(request):
+    p1=food_menu()
+
+    p1.restaurant_name=request.POST.get('restaurant')
+    p1.menu_name=request.POST.get('menu')
+    p1.type=request.POST.get('type')
+    p1.cusion=request.POST.get('cusion')
+    p1.orgin=request.POST.get('orgin')
+    photo=request.FILES['photo']
+    fs= FileSystemStorage()
+    filename=fs.save(photo.name,photo) 
+    uploaded_file_url=fs.url(filename)
+    p1.photo=uploaded_file_url
+    p1.save()
+    return redirect('/restaurentHome/')
