@@ -42,10 +42,6 @@ def reservation(request):
 
 
 
-
-
-
-
 def account(request):
     p1=User()
     p2=user_account()
@@ -102,6 +98,8 @@ def restaurentHome(request):
 def userHome(request):
     a=request.session['username']
     return render(request,'user1.html',{'x':a})
+
+
 def account2(request):
     p1=User()
     p2=restaurant_account()
@@ -139,3 +137,6 @@ def account2(request):
     p2.save()
     p3.save()
     return redirect('/login')
+
+def create_restaurant(request):
+    return render(request,'create_restaurant.html')

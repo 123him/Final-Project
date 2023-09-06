@@ -10336,3 +10336,9 @@ about images */
 .mimg1{
   background-image: url('../images/bg_5.jpg');
 }
+
+/* create restaurnat image */
+
+.rimg{
+  background-image: url('../images/background\ image.jpeg');
+}

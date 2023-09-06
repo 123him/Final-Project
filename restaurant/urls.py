@@ -30,9 +30,10 @@ urlpatterns = [
     path('user1/',views.user1),
     path('res/',views.restur),
     path('login/',views.login),
-    path('restaurentHome/',views.restaurentHome),
-    path('userHome/',views.userHome),
     path('table/',views.table),
+    path('create_restaurant/',views.create_restaurant),
+    path('userHome/',views.userHome),
+    path('restaurentHome/',views.restaurentHome),
     
     
    path('chef/',views.chef),
@@ -40,7 +41,7 @@ urlpatterns = [
     
     path('account/',views.account),
     path('login1/',views.login1),
-    path('account2/',views.account2),
+    path('account2/',views.account2)
     
 ]
 if settings.DEBUG:

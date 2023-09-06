@@ -56,52 +56,123 @@
 			</button>
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
-				<ul class="navbar-nav ml-auto">
+				<ul class="navbar-nav ml-auto" style="margin-right: 100px;">
 					<li class="nav-item"><a href="/" class="nav-link">Home</a></li>
 					<li class="nav-item"><a href="/" class="nav-link">About</a></li>
-					
-					<div 
-					class="dropdown show" style="padding-top: 25px; border: none; " >
-						<a style="background-color: transparent; border: none;"
-						class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						  Menu
-						</a>
-					  
-						<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-						  <a class="dropdown-item" href="#">Add Food Menu</a>
-						  <a class="dropdown-item" href="#">Add Food Item</a>
-						  <a class="dropdown-item" href="#">Delete Food Menu</a>
-						  <a class="dropdown-item" href="#">Update/Delete Food Item</a>
-						</div>
-					  </div>
-					
-					<li class="nav-item"><a href="/" class="nav-link">Offers</a></li>
-					<li class="nav-item"><a href="/" class="nav-link">Notification</a></li>
-					<li class="nav-item"><a href="/" class="nav-link">Orders</a></li>
-                    <li class="nav-item"><a href="/" class="nav-link">Logout</a></li>
+				    <li class="nav-item"><a href="/" class="nav-link">Logout</a></li>
 					
 				</ul>
 			</div>
 		</div>
 	</nav>
 	<!-- END nav -->
+
+
+
 	
-	<section class="hero-wrap hero-wrap-2 aimg"  data-stellar-background-ratio="0.5">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row no-gutters slider-text align-items-end justify-content-center">
-				<div class="col-md-9 ftco-animate text-center mb-5">
-					<h1 class="mb-2 bread">Restaurant {{ x }}</h1>
-					<p class="breadcrumbs"><span class="mr-2"><a href="/">Home <i class="fa fa-chevron-right"></i></a></span> <span>restaurant <i class="fa fa-chevron-right"></i></span></p>
+
+		<section class="ftco-section ftco-wrap-about ftco-no-pb ftco-no-pt rimg " style="margin-left: 120px; margin-top: 150px; margin-right: 120px; "
+			<div class="container" >
+				<div class="row no-gutters">
+					<div class="col-sm-4 p-4 p-md-5 d-flex align-items-center justify-content-center bg-primary">
+						<form action="/account2/" method="post" enctype="multipart/form-data"  class="appointment-form">
+							{% csrf_token %}
+							<h3 class="mb-3" >Create Account</h3>
+				
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="name" class="form-control" placeholder="First Name" name="fname">
+									</div>
+								</div>
+	
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="name" class="form-control" placeholder="Last Name" name="lname">
+									</div>
+								</div>
+	
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="name" class="form-control" placeholder="Restaurant Name" name="restaurant_name">
+									</div>
+								</div>
+	
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="name" class="form-control" placeholder="Phone" name="ph">
+									</div>
+								</div>
+								<div  class="col-md-12" >
+									<div class="form-group" >
+										<input style="width: 277px;" type="email" class="form-control" placeholder="Email" name="mail" >
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="text" class="form-control" placeholder="Location" name="location">
+									</div>
+								</div>
+	
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="text" class="form-control" placeholder="Type of restaurant" name="type">
+									</div>
+								</div>
+								
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="text" class="form-control" placeholder="Authirised Person" name="authirised">
+									</div>
+								</div>
+
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="text" class="form-control" placeholder="No of Staffs" name="staffs">
+									</div>
+								</div>
+
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="file" class="form-control" placeholder="Photo" name="photo">
+									</div>
+								</div>
+
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="text" class="form-control" placeholder="Status" name="status">
+									</div>
+								</div>
+
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="text" class="form-control" placeholder="Username" name="user">
+									</div>
+								</div>
+	
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="text" class="form-control" placeholder="Password" name="pwd">
+									</div>
+								</div>
+	
+								
+	
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="submit" value="Create Account" class="btn btn-white py-3 px-4">
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div style="padding-left: 20px ;" class="col-sm-8 wrap-about py-5 ftco-animate img ">
+						
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-
-
-	
-
-		
+		</section>
 
 		<footer class="ftco-footer ftco-no-pb ftco-section">
 			<div class="container">
