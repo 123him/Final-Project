@@ -78,9 +78,9 @@
 		<div class="container">
 			<div class="row no-gutters">
 				<div class="col-sm-4 p-4 p-md-5 d-flex align-items-center justify-content-center bg-primary">
-					<form action="/food_menu/" method="post" enctype="multipart/form-data" class="appointment-form">
+					<form action="/food_item/" method="post" enctype="multipart/form-data" class="appointment-form">
 						{% csrf_token %}
-						<h3 class="mb-3" >Food Menu</h3>
+						<h3 class="mb-3" >Add Food Items</h3>
             
 						<div class="row">
 							<div class="col-md-12">
@@ -94,30 +94,51 @@
 								</div>
 							</div>
 
+                            <div class="col-md-12">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Menu Item Name" name="item">
+								</div>
+							</div>
 
-							<div class="col-md-12">
+                            <div class="col-md-12">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Quantity" name="qty">
+								</div>
+							</div>
+
+
+							
+                            <div class="col-md-12">
+								<div class="form-group" >
+									<input type="number" class="form-control" placeholder="Price" name="rs">
+								</div>
+							</div>
+
+                            <div class="col-md-12">
 								<div class="form-group radio">
                                     <label for="" style="font-size: 14px; color: rgb(235, 238, 241);">Type of Food</label><br>
-									<input type="radio"   placeholder="Type" name="type" value="Veg">
+									<input type="radio"   name="type" value="Veg">
                                     <label for="" style="font-size: 14px; color: rgb(235, 238, 241);" >Veg</label>
-                                    <input type="radio" name="Type" value="Non-Veg">
+                                    <input type="radio" name="type" value="Non-Veg">
                                     <label for="" style="font-size: 14px; color: rgb(235, 238, 241);">Non-Veg</label>
-									<input type="radio" name="Type" value="Others">
+									<input type="radio" name="type" value="Others">
                                     <label for="" style="font-size: 14px; color: rgb(235, 238, 241);">Others</label>
 								</div>
 							</div>
 							
-                            <div class="col-md-12">
-								<div class="form-group" >
-									<input type="text" class="form-control" placeholder="Cruises" name="cruises">
-								</div>
-							</div>
-							
 							<div class="col-md-12">
 								<div class="form-group" >
-									<input type="text" class="form-control" placeholder="Orgin" name="orgin">
+									<input type="text" class="form-control" placeholder="Cooking Time" name="tym">
 								</div>
 							</div>
+
+                            
+							<div class="col-md-12">
+								<div class="form-group" >
+									<input type="text" class="form-control" placeholder="Status" name="status">
+								</div>
+							</div>
+
 
                             <div class="col-md-12">
 								<div class="form-group" >
@@ -127,7 +148,7 @@
 							
 							<div class="col-md-12">
 								<div class="form-group">
-									<input  type="submit" value="Add Menu" class="btn btn-white py-3 px-4">
+									<input  type="submit" value="Add Items" class="btn btn-white py-3 px-4">
 								</div>
 							</div>
               
@@ -136,7 +157,7 @@
 					</form>
 				</div>
             
-				<div  class="col-sm-8 wrap-about py-5 ftco-animate img mimgs">
+				<div  class="col-sm-8 wrap-about py-5 ftco-animate img fooditem">
 					
 					<div class="row pb-5 pb-md-0">
 						<div class="col-md-12 col-lg-7">

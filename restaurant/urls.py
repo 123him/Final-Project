@@ -36,6 +36,10 @@ urlpatterns = [
     path('restaurentHome/',views.restaurentHome),
     path('addFood/',views.addFood),
     path('food_menu/',views.foodmenu1),
+    path('addItem/',views.items),
+    path('food_item/',views.item1),
+    path('view_restaurant/',views.viewRestaurant),
+    path('viewFood_items/',views.viewFooditems),
     
    path('chef/',views.chef),
    path('reservation/',views.reservation),

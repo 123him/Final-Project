@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth import authenticate
  
-from app1.models import user_account,restaurant_account,tbl_accounts,food_menu
+from app1.models import user_account,restaurant_account,tbl_accounts,food_menu,food_item
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.files.storage import FileSystemStorage
@@ -150,7 +150,7 @@ def foodmenu1(request):
     p1.restaurant_name=request.POST.get('restaurant')
     p1.menu_name=request.POST.get('menu')
     p1.type=request.POST.get('type')
-    p1.cusion=request.POST.get('cusion')
+    p1.cruises=request.POST.get('cusion')
     p1.orgin=request.POST.get('orgin')
     photo=request.FILES['photo']
     fs= FileSystemStorage()
@@ -159,3 +159,32 @@ def foodmenu1(request):
     p1.photo=uploaded_file_url
     p1.save()
     return redirect('/restaurentHome/')
+
+def items(request):
+    return render(request,'addFoodItem.html')
+
+def item1(request):
+    p1=food_item()
+
+    p1.restaurant_name=request.POST.get('restaurant')
+    p1.menu_name=request.POST.get('menu')
+    p1.menu_item_name=request.POST.get('item')
+    p1.quantity=request.POST.get('qty')
+    p1.price=request.POST.get('rs')
+    p1.type=request.POST.get('type')
+    p1.cooking_time=request.POST.get('tym')
+    p1.status=request.POST.get('status')
+    photo=request.FILES['photo']
+    fs= FileSystemStorage()
+    filename=fs.save(photo.name,photo) 
+    uploaded_file_url=fs.url(filename)
+    p1.photo=uploaded_file_url
+    p1.save()
+    return redirect('/restaurentHome/')
+
+def viewRestaurant(request):
+    data=restaurant_account.objects.all()
+    return render(request,'view_restaurant.html',{'x':data})
+
+def viewFooditems(request):
+    return render(request,'view_fooditems.html')
