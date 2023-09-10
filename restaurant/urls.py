@@ -40,13 +40,16 @@ urlpatterns = [
     path('food_item/',views.item1),
     path('view_restaurant/',views.viewRestaurant),
     path('viewFood_items/',views.viewFooditems),
-    
-   path('chef/',views.chef),
-   path('reservation/',views.reservation),
-    
+    path('chef/',views.chef),
+    path('reservation/',views.reservation),
     path('account/',views.account),
     path('login1/',views.login1),
-    path('account2/',views.account2)
+    path('account2/',views.account2),
+    path('admin_viewRestaurant/',views.admin_viewRestaurant),
+    path('admin_updateRestaurant/<int:id>',views.admin_updateRestaurant),
+    path('update_restaurantAdmin1/<int:id>',views.update_restaurantAdmin1),
+    path('admin_deleteRestaurant/<int:id>',views.admin_deleteRestaurant),
+
     
 ]
 if settings.DEBUG:

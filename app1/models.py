@@ -24,7 +24,7 @@ class restaurant_account(models.Model):
     email = models.CharField(max_length=50)
     location = models.CharField(max_length=50)
     type_of_restaurant = models.CharField(max_length=50)
-    authirised_person = models.CharField(max_length=50)
+    authorised_person = models.CharField(max_length=50)
     no_of_staff = models.IntegerField()
     photo = models.CharField(max_length=500)
     status = models.CharField(max_length=50)

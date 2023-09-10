@@ -92,23 +92,39 @@
 		<div class="container">
 			<table class="table" >
 				<thead class="thead">
-					<th>Restaurant Name </th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Restaurant Name </th>
                     <th>Type of Restaurant</th>
+                    <th>Authorised Person </th>
 					<th>Location</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>No of Staffs</th>
+                    <th>Status</th>
                     <th>Photo</th>
-					<th ></th>
+					
 					
 				</thead>
 				<tbody  class="tbody">
                     {% for x1 in x %}
 					<tr style="text-align: center;" >
+                        <td>{{ x1.first_name }}</td>
+                        <td>{{ x1.last_name }}</td>
 						<td>{{ x1.restaurant_name }}</td>
 						<td>{{ x1.type_of_restaurant }}</td>
+                        <td>{{ x1.authorised_person }}</td>
 						<td>{{ x1.location }}</td>
+                        <td>{{ x1.email }}</td>
+                        <td>{{ x1.Phone }}</td>
+                        <td>{{ x1.no_of_staff }}</td>
+                        <td>{{ x1.status }}</td>
                         <td>
                             <img src="{{ x1.photo }}" height="150px" width="150px" alt="">
                         </td>
-						<td><a href="/viewFood_items/">View Food Items</a></td>
+                        <td><a  href="/admin_updateRestaurant/{{x1.id}}">Update</a> <a href="/admin_deleteRestaurant/{{x1.id}}">Delete</a></td>
+						
+						
 					</tr>
                     {% endfor %}
 					

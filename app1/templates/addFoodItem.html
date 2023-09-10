@@ -85,12 +85,17 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="form-group" >
-									<input type="text" class="form-control" placeholder="Restaurant Name" name="restaurant">
+									<input type="text" class="form-control" value="{{ x }}" placeholder="Restaurant Name" name="restaurant">
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="form-group">
-									<input type="text" class="form-control" placeholder="Menu Name" name="menu">
+									<select name="menu" id="" class="form-control">
+										{% for m in y %}
+										<option  class="form-control" value="{{ m.menu_name }}">{{ m.menu_name }}</option>
+										{% endfor %}
+									</select>
+									
 								</div>
 							</div>
 
