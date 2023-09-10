@@ -53,6 +53,8 @@ urlpatterns = [
     path('res_update_foodMenu/<int:id>',views.res_update_foodMenu),
     path('res_update_foodMenu1/<int:id>',views.res_update_foodMenu1),
     path('res_delete_foodMenu/<int:id>',views.res_delete_foodMenu),
+    path('res_offer/',views.res_offer),
+    path('offer1/',views.offer1),
 
     
 ]

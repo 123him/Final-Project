@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth import authenticate
  
-from app1.models import user_account,restaurant_account,tbl_accounts,food_menu,food_item
+from app1.models import user_account,restaurant_account,tbl_accounts,food_menu,food_item,offer
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.files.storage import FileSystemStorage
@@ -274,7 +274,31 @@ def res_update_foodMenu1(request,id):
 
         p1.save()
         return redirect('/res_view_foodMenu/')
+
 def res_delete_foodMenu(request,id):
     datas4=food_menu.objects.get(id=id)
     datas4.delete()
     return redirect('/res_view_foodMenu/')
+
+def res_offer(request):
+    datas5=request.session['username']
+    datas6=food_item.objects.filter(restaurant_name=datas5)
+    return render(request,'offer.html',{'y':datas5,'x':datas6})
+
+def offer1(request):
+    p1=offer()
+    p1.restaurant_name=request.POST.get('restaurant')
+    p1.menu_item_name=request.POST.get('menu_item')
+    p1.offer=request.POST.get('offer')
+    p1.start_date=request.POST.get('start')
+    p1.end_date=request.POST.get('end')
+    p1.details=request.POST.get('details')
+    p1.status=request.POST.get('status')
+    photo=request.FILES['photo']
+    fs= FileSystemStorage()
+    filename=fs.save(photo.name,photo) 
+    uploaded_file_url=fs.url(filename)
+    p1.photo=uploaded_file_url
+    p1.save()
+
+    return redirect('/res_offer/')

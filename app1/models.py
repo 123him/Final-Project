@@ -34,11 +34,11 @@ class restaurant_account(models.Model):
         db_table = "restaurant_account"
 
 class offer(models.Model):
-    restaurant_id=models.CharField(max_length=50)
+    restaurant_name=models.CharField(max_length=50)
     menu_item_name=models.CharField(max_length=50)
-    offer=models.IntegerField()
-    start_date=models.DateField()
-    end_date=models.DateField()
+    offer=models.CharField(max_length=50)
+    start_date=models.CharField(max_length=50)
+    end_date=models.CharField(max_length=50)
     details=models.CharField(max_length=100)
     status=models.CharField(max_length=50)
     photo=models.CharField(max_length=500)
