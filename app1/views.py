@@ -241,3 +241,40 @@ def admin_deleteRestaurant(request,id):
     datas1=restaurant_account.objects.get(id=id)
     datas1.delete()
     return redirect('/admin_viewRestaurant/')
+
+def res_view_foodMenu(request):
+    datas2=food_menu.objects.all()
+    return render(request,'res_view_foodMenu.html',{'y':datas2})
+
+def res_update_foodMenu(request,id):
+    datas3=food_menu.objects.get(id=id)
+    return render(request,'res_update_foodMenu.html',{'x':datas3})
+
+def res_update_foodMenu1(request,id):
+    p1=food_menu.objects.get(id=id)
+    try:
+        p1.restaurant_name=request.POST.get('restaurant')
+        p1.menu_name=request.POST.get('menu')
+        p1.type=request.POST.get('type')
+        p1.cruises=request.POST.get('cruises')
+        p1.orgin=request.POST.get('orgin')
+        photo=request.FILES['photo']
+        fs= FileSystemStorage()
+        filename=fs.save(photo.name,photo) 
+        uploaded_file_url=fs.url(filename)
+        p1.photo=uploaded_file_url
+        p1.save()
+
+    except:
+        p1.restaurant_name=request.POST.get('restaurant')
+        p1.menu_name=request.POST.get('menu')
+        p1.type=request.POST.get('type')
+        p1.cruises=request.POST.get('cruises')
+        p1.orgin=request.POST.get('orgin')
+
+        p1.save()
+        return redirect('/res_view_foodMenu/')
+def res_delete_foodMenu(request,id):
+    datas4=food_menu.objects.get(id=id)
+    datas4.delete()
+    return redirect('/res_view_foodMenu/')

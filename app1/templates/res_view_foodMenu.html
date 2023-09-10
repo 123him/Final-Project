@@ -58,51 +58,73 @@
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-					<li class="nav-item"><a href="/" class="nav-link">About</a></li>
 					
-					<div 
-					class="dropdown show" style="padding-top: 25px; border: none; " >
-						<a style="background-color: transparent; border: none;"
-						class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						  Menu
-						</a>
-					  
-						<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-						  <a class="dropdown-item" href="/addFood/">Add Food Menu</a>
-						  <a class="dropdown-item" href="/addItem/">Add Food Item</a>
-						  <a class="dropdown-item" href="/res_view_foodMenu/">Update/Delete Food Menu</a>
-						  <a class="dropdown-item" href="/update1/">Update Food Item</a>
-						  <a class="dropdown-item" href="/Delete1/">Delete Food Item</a>
-						</div>
-					  </div>
+					<li class="nav-item"><a href="/" class="nav-link">Contact</a></li>
 					
-					<li class="nav-item"><a href="/" class="nav-link">Offers</a></li>
+					<li class="nav-item"><a href="/" class="nav-link">Restaurant</a></li>
+					<li class="nav-item"><a href="/" class="nav-link">Feedback</a></li>
+					
+					<li class="nav-item"><a href="/admin/" class="nav-link">Admin Profile</a></li>
+				
 					<li class="nav-item"><a href="/" class="nav-link">Notification</a></li>
-					<li class="nav-item"><a href="/" class="nav-link">Orders</a></li>
-                    <li class="nav-item"><a href="/" class="nav-link">Logout</a></li>
-					
+					<li class="nav-item"><a href="/" class="nav-link">Logout</a></li>
+
 				</ul>
 			</div>
 		</div>
 	</nav>
 	<!-- END nav -->
 	
-	<section class="hero-wrap hero-wrap-2 aimg"  data-stellar-background-ratio="0.5">
+	<!-- <section class="hero-wrap hero-wrap-2 aimg9"  data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row no-gutters slider-text align-items-end justify-content-center">
 				<div class="col-md-9 ftco-animate text-center mb-5">
-					<h1 class="mb-2 bread">Restaurant {{ x }}</h1>
-					<p class="breadcrumbs"><span class="mr-2"><a href="/">Home <i class="fa fa-chevron-right"></i></a></span> <span>restaurant <i class="fa fa-chevron-right"></i></span></p>
+					<h1 class="mb-2 bread">Admin</h1>
+					<p class="breadcrumbs"><span class="mr-2"><a href="/">Home <i class="fa fa-chevron-right"></i></a></span> <span>admin <i class="fa fa-chevron-right"></i></span></p>
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 
 
-	
-
-		
+	 <section class="ftco-section ">
+		<div class="container">
+			<table class="table" >
+				<thead class="thead">
+					<th>Restaurant Name </th>
+                    <th>Menu Name</th>
+                    <th>Type</th>
+					<th>Cruises</th>
+					<th>Orgin</th>
+					<th>Photo</th>
+					<th> </th>
+					
+					
+				</thead>
+				<tbody  class="tbody">
+                    {% for y1 in y %}
+					<tr style="text-align: center;" >
+						<td>{{ y1.restaurant_name }}</td>
+						<td>{{ y1.menu_name }}</td>
+						<td>{{ y1.type }}</td>
+						<td>{{ y1.cruises }}</td>
+						<td>{{ y1.orgin }}</td>
+						<td>
+                            <img src="{{ y1.photo }}" height="150px" width="150px" alt="">
+                        </td>
+						<td><a href="/res_update_foodMenu/{{y1.id}}">Update</a> <br> <a href="/res_delete_foodMenu/{{y1.id}}">Delete</a></td>
+						
+					</tr>
+                    {% endfor %}
+					
+				</tbody>
+			</table>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		</section> 
 
 		<footer class="ftco-footer ftco-no-pb ftco-section">
 			<div class="container">

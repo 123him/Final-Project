@@ -49,6 +49,10 @@ urlpatterns = [
     path('admin_updateRestaurant/<int:id>',views.admin_updateRestaurant),
     path('update_restaurantAdmin1/<int:id>',views.update_restaurantAdmin1),
     path('admin_deleteRestaurant/<int:id>',views.admin_deleteRestaurant),
+    path('res_view_foodMenu/',views.res_view_foodMenu),
+    path('res_update_foodMenu/<int:id>',views.res_update_foodMenu),
+    path('res_update_foodMenu1/<int:id>',views.res_update_foodMenu1),
+    path('res_delete_foodMenu/<int:id>',views.res_delete_foodMenu),
 
     
 ]
