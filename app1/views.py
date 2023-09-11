@@ -189,8 +189,10 @@ def viewRestaurant(request):
     data=restaurant_account.objects.all()
     return render(request,'view_restaurant.html',{'x':data})
 
-def viewFooditems(request):
-    return render(request,'view_fooditems.html')
+def viewFooditems(request,restaurant_name):
+    data6=food_item.objects.filter(restaurant_name=restaurant_name)
+
+    return render(request,'view_fooditems.html',{'x':data6})
 
 def admin_viewRestaurant(request):
     a=restaurant_account.objects.all()
@@ -302,3 +304,49 @@ def offer1(request):
     p1.save()
 
     return redirect('/res_offer/')
+
+def res_view_foodItem(request):
+    data1=food_item.objects.all()
+    return render(request,'res_view_foodItem.html',{'x':data1})
+
+def res_update_foodItem(request,id):
+    data2=food_item.objects.get(id=id)
+    data3=request.session['username']
+    data4=food_menu.objects.filter(restaurant_name=data3)
+    return render(request,'res_update_foodItem.html',{'x':data2,'z':data3,'y':data4})
+
+def res_update_foodItem1(request,id):
+    p1=food_item.objects.get(id=id)
+    try:
+        p1.restaurant_name=request.POST.get('restaurant')
+        p1.menu_name=request.POST.get('menu')
+        p1.menu_item_name=request.POST.get('item')
+        p1.quantity=request.POST.get('qty')
+        p1.price=request.POST.get('rs')
+        p1.type=request.POST.get('type')
+        p1.cooking_time=request.POST.get('tym')
+        p1.status=request.POST.get('status')
+        photo=request.FILES['photo']
+        fs= FileSystemStorage()
+        filename=fs.save(photo.name,photo) 
+        uploaded_file_url=fs.url(filename)
+        p1.photo=uploaded_file_url
+        p1.save()
+
+    except:
+        p1.restaurant_name=request.POST.get('restaurant')
+        p1.menu_name=request.POST.get('menu')
+        p1.menu_item_name=request.POST.get('item')
+        p1.quantity=request.POST.get('qty')
+        p1.price=request.POST.get('rs')
+        p1.type=request.POST.get('type')
+        p1.cooking_time=request.POST.get('tym')
+        p1.status=request.POST.get('status')
+
+        p1.save()
+        return redirect('/res_view_foodItem/')
+
+def res_delete_foodItem(request,id):
+    data5=food_item.objects.get(id=id)
+    data5.delete()
+    return redirect('/res_view_foodItem/')

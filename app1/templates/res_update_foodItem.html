@@ -78,57 +78,83 @@
 		<div class="container">
 			<div class="row no-gutters">
 				<div class="col-sm-4 p-4 p-md-5 d-flex align-items-center justify-content-center bg-primary">
-					<form action="/res_update_foodMenu1/{{ x.id }}" method="post" enctype="multipart/form-data" class="appointment-form">
+					<form action="/res_update_foodItem1/{{ x.id }}" method="post" enctype="multipart/form-data" class="appointment-form">
 						{% csrf_token %}
-						<h3 class="mb-3" >Food Menu</h3>
+						<h3 class="mb-3" >Add Food Items</h3>
             
 						<div class="row">
 							<div class="col-md-12">
 								<div class="form-group" >
-									<input type="text" class="form-control" value="{{ x.restaurant_name }}" placeholder="Restaurant Name" name="restaurant">
+									<input type="text" class="form-control" value="{{ x.restaurant_name}}" placeholder="Restaurant Name" name="restaurant">
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="form-group">
-									<input type="text" class="form-control" placeholder="Menu Name" name="menu" value="{{ x.menu_name }}">
+									<select name="menu" id="" class="form-control">
+										{% for m in y %}
+										<option  class="form-control" value="{{ m.menu_name }}">{{ m.menu_name }}</option>
+										{% endfor %}
+									</select>
+									
+								</div>
+							</div>
+
+                            <div class="col-md-12">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Menu Item Name" name="item" value="{{ x.menu_item_name }}">
+								</div>
+							</div>
+
+                            <div class="col-md-12">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Quantity" name="qty" value="{{ x.quantity }}">
 								</div>
 							</div>
 
 
-							<div class="col-md-12">
+							
+                            <div class="col-md-12">
+								<div class="form-group" >
+									<input type="number" class="form-control" placeholder="Price" name="rs" value="{{ x.price }}">
+								</div>
+							</div>
+
+                            <div class="col-md-12">
 								<div class="form-group radio">
                                     <label for="" style="font-size: 14px; color: rgb(235, 238, 241);">Type of Food</label><br>
-									<input type="radio"   placeholder="Type" name="type" value="Veg">
+									<input type="radio"   name="type" value="Veg">
                                     <label for="" style="font-size: 14px; color: rgb(235, 238, 241);" >Veg</label>
                                     <input type="radio" name="type" value="Non-Veg">
                                     <label for="" style="font-size: 14px; color: rgb(235, 238, 241);">Non-Veg</label>
-									<input type="radio" name="type" value="x.Others">
+									<input type="radio" name="type" value="Others">
                                     <label for="" style="font-size: 14px; color: rgb(235, 238, 241);">Others</label>
 								</div>
 							</div>
 							
-                            <div class="col-md-12">
-								<div class="form-group" >
-									<input type="text" class="form-control" placeholder="Cruises" name="cruises" value="{{ x.cruises }}">
-								</div>
-							</div>
-							
 							<div class="col-md-12">
 								<div class="form-group" >
-									<input type="text" class="form-control" placeholder="Orgin" name="orgin" value="{{ x.orgin }}">
+									<input type="text" class="form-control" placeholder="Cooking Time" name="tym" value="{{ x.cooking_time }}">
 								</div>
 							</div>
 
+                            
+							<div class="col-md-12">
+								<div class="form-group" >
+									<input type="text" class="form-control" placeholder="Status" name="status" value="{{ x.status }}">
+								</div>
+							</div>
+
+
                             <div class="col-md-12">
 								<div class="form-group" >
-                                    <img src="{{ x.photo }}" alt="" height="100px" width="100px">
+                                    <img src="{{ x.photo }}" alt="" height="150px" width="150px">
 									<input type="file" class="form-control" placeholder="Photo" name="photo" value="{{ x.photo }}">
 								</div>
 							</div>
 							
 							<div class="col-md-12">
 								<div class="form-group">
-									<input  type="submit" value="Update Menu" class="btn btn-white py-3 px-4">
+									<input  type="submit" value="Update Items" class="btn btn-white py-3 px-4">
 								</div>
 							</div>
               
@@ -137,7 +163,7 @@
 					</form>
 				</div>
             
-				<div  class="col-sm-8 wrap-about py-5 ftco-animate img mimgs">
+				<div  class="col-sm-8 wrap-about py-5 ftco-animate img fooditem">
 					
 					<div class="row pb-5 pb-md-0">
 						<div class="col-md-12 col-lg-7">

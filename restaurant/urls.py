@@ -39,7 +39,7 @@ urlpatterns = [
     path('addItem/',views.items),
     path('food_item/',views.item1),
     path('view_restaurant/',views.viewRestaurant),
-    path('viewFood_items/',views.viewFooditems),
+    path('viewFood_items/<str:restaurant_name>',views.viewFooditems),
     path('chef/',views.chef),
     path('reservation/',views.reservation),
     path('account/',views.account),
@@ -55,7 +55,10 @@ urlpatterns = [
     path('res_delete_foodMenu/<int:id>',views.res_delete_foodMenu),
     path('res_offer/',views.res_offer),
     path('offer1/',views.offer1),
-
+    path('res_view_foodItem/',views.res_view_foodItem),
+    path('res_update_foodItem/<int:id>',views.res_update_foodItem),
+    path('res_update_foodItem1/<int:id>',views.res_update_foodItem1),
+    path('res_delete_foodItem/<int:id>',views.res_delete_foodItem)
     
 ]
 if settings.DEBUG:
