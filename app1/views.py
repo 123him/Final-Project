@@ -350,3 +350,7 @@ def res_delete_foodItem(request,id):
     data5=food_item.objects.get(id=id)
     data5.delete()
     return redirect('/res_view_foodItem/')
+
+def user_view_offer(request):
+    data6=offer.objects.all()
+    return render(request,'user_view_offer.html',{'x':data6})

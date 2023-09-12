@@ -10150,9 +10150,11 @@ tr:hover{
 }
 .image3{
   background-image: url(../images/about.jpg);
-  
+  margin-inline-end: 0px;
   
 }
+
+
 
 .aimg10{
   background-image: url(../images/logimg.jpg);

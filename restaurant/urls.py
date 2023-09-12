@@ -58,7 +58,8 @@ urlpatterns = [
     path('res_view_foodItem/',views.res_view_foodItem),
     path('res_update_foodItem/<int:id>',views.res_update_foodItem),
     path('res_update_foodItem1/<int:id>',views.res_update_foodItem1),
-    path('res_delete_foodItem/<int:id>',views.res_delete_foodItem)
+    path('res_delete_foodItem/<int:id>',views.res_delete_foodItem),
+    path('user_view_offer/',views.user_view_offer),
     
 ]
 if settings.DEBUG:
