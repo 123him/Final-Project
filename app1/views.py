@@ -21,7 +21,9 @@ def admin1(request):
 
 def user1(request):
     data=request.session['username']
-    return render(request,'user1.html',{'y':data})
+    data7=user_account.objects.get(username=data)
+    return render(request,'user1.html')
+
 
 def restur(request):
     return render(request,'restaurant.html')
@@ -97,7 +99,8 @@ def restaurentHome(request):
     return render(request,'restaurant.html',{'x':a})
 def userHome(request):
     a=request.session['username']
-    return render(request,'user1.html',{'x':a})
+    a1=user_account.objects.get(username=a)
+    return render(request,'user1.html',{'x':a1})
 
 
 def account2(request):

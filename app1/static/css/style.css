@@ -10098,7 +10098,7 @@ span.psw {
   background-image:  url(../images/insta-6.jpg);
 }
 .aimg8{
-  background-image: url(../images/userimg.jpeg);
+  background-image: url(../images/7.jpg);
 }
 
 
@@ -10312,9 +10312,7 @@ about images */
   background-image: url(../images/insta-1.jpg);
 }
 
-.aimg8{
-  background-image: url(../images/insta-2.jpg);
-}
+
 
 .aimg9{
   background-image:  url(../images/adminimg.jpeg);
@@ -10368,4 +10366,12 @@ about images */
 
 .fooditem{
   background-image: url(../images/fooditemimg.jpeg);
+}
+
+.h1style{
+  text-align: left;
+  
+}
+.userimg{
+background-image:url(../images/6.jpg);
 }
