@@ -36,13 +36,30 @@ urlpatterns = [
     path('restaurentHome/',views.restaurentHome),
     path('addFood/',views.addFood),
     path('food_menu/',views.foodmenu1),
-    
-   path('chef/',views.chef),
-   path('reservation/',views.reservation),
-    
+    path('addItem/',views.items),
+    path('food_item/',views.item1),
+    path('view_restaurant/',views.viewRestaurant),
+    path('viewFood_items/<str:restaurant_name>',views.viewFooditems),
+    path('chef/',views.chef),
+    path('reservation/',views.reservation),
     path('account/',views.account),
     path('login1/',views.login1),
-    path('account2/',views.account2)
+    path('account2/',views.account2),
+    path('admin_viewRestaurant/',views.admin_viewRestaurant),
+    path('admin_updateRestaurant/<int:id>',views.admin_updateRestaurant),
+    path('update_restaurantAdmin1/<int:id>',views.update_restaurantAdmin1),
+    path('admin_deleteRestaurant/<int:id>',views.admin_deleteRestaurant),
+    path('res_view_foodMenu/',views.res_view_foodMenu),
+    path('res_update_foodMenu/<int:id>',views.res_update_foodMenu),
+    path('res_update_foodMenu1/<int:id>',views.res_update_foodMenu1),
+    path('res_delete_foodMenu/<int:id>',views.res_delete_foodMenu),
+    path('res_offer/',views.res_offer),
+    path('offer1/',views.offer1),
+    path('res_view_foodItem/',views.res_view_foodItem),
+    path('res_update_foodItem/<int:id>',views.res_update_foodItem),
+    path('res_update_foodItem1/<int:id>',views.res_update_foodItem1),
+    path('res_delete_foodItem/<int:id>',views.res_delete_foodItem),
+    path('user_view_offer/',views.user_view_offer),
     
 ]
 if settings.DEBUG:

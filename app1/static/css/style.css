@@ -10098,12 +10098,10 @@ span.psw {
   background-image:  url(../images/insta-6.jpg);
 }
 .aimg8{
-  background-image: url(../images/userimg.jpeg);
+  background-image: url(../images/7.jpg);
 }
 
-.aimg9{
-  background-image: url(../images/adminimg.jpg);
-}
+
 
 /* table */
 .table{
@@ -10130,10 +10128,12 @@ table,th,td,thead,tr{
 }
 .tbody{
   text-align: center;
-  background-color:;
+  
   
 
 }
+
+
 tr:hover{
   background-color: #ed969e;
 }
@@ -10150,9 +10150,11 @@ tr:hover{
 }
 .image3{
   background-image: url(../images/about.jpg);
-  
+  margin-inline-end: 0px;
   
 }
+
+
 
 .aimg10{
   background-image: url(../images/logimg.jpg);
@@ -10310,12 +10312,10 @@ about images */
   background-image: url(../images/insta-1.jpg);
 }
 
-.aimg8{
-  background-image: url(../images/insta-2.jpg);
-}
+
 
 .aimg9{
-  background-image:  url(../images/insta-3.jpg);
+  background-image:  url(../images/adminimg.jpeg);
 
 }
 
@@ -10362,4 +10362,16 @@ about images */
 
 .mimgs{
   background-image: url(../images/menuimg.jpeg);
+}
+
+.fooditem{
+  background-image: url(../images/fooditemimg.jpeg);
+}
+
+.h1style{
+  text-align: left;
+  
+}
+.userimg{
+background-image:url(../images/6.jpg);
 }

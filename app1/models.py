@@ -24,7 +24,7 @@ class restaurant_account(models.Model):
     email = models.CharField(max_length=50)
     location = models.CharField(max_length=50)
     type_of_restaurant = models.CharField(max_length=50)
-    authirised_person = models.CharField(max_length=50)
+    authorised_person = models.CharField(max_length=50)
     no_of_staff = models.IntegerField()
     photo = models.CharField(max_length=500)
     status = models.CharField(max_length=50)
@@ -34,11 +34,11 @@ class restaurant_account(models.Model):
         db_table = "restaurant_account"
 
 class offer(models.Model):
-    restaurant_id=models.CharField(max_length=50)
+    restaurant_name=models.CharField(max_length=50)
     menu_item_name=models.CharField(max_length=50)
-    offer=models.IntegerField()
-    start_date=models.DateField()
-    end_date=models.DateField()
+    offer=models.CharField(max_length=50)
+    start_date=models.CharField(max_length=50)
+    end_date=models.CharField(max_length=50)
     details=models.CharField(max_length=100)
     status=models.CharField(max_length=50)
     photo=models.CharField(max_length=500)
@@ -53,7 +53,7 @@ class food_item(models.Model):
     quantity=models.IntegerField()
     price=models.IntegerField()
     type=models.CharField(max_length=50)
-    cooking_time=models.TimeField()
+    cooking_time=models.CharField(max_length=50)
     status=models.CharField(max_length=50)
     photo=models.CharField(max_length=500)
 
@@ -65,7 +65,7 @@ class food_menu(models.Model):
     menu_name=models.CharField(max_length=50)
     type=models.CharField(max_length=50)
     orgin=models.CharField(max_length=50)
-    cusion=models.CharField(max_length=50)
+    cruises=models.CharField(max_length=50)
     photo=models.CharField(max_length=500)
 
     class Meta:
