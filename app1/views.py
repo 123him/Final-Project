@@ -357,3 +357,8 @@ def res_delete_foodItem(request,id):
 def user_view_offer(request):
     data6=offer.objects.all()
     return render(request,'user_view_offer.html',{'x':data6})
+
+def user_details(request):
+    a2=request.session['username']
+    a1=user_account.objects.get(username=a2)
+    return render(request,'user_details.html',{'x':a1})

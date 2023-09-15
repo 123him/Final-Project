@@ -50,7 +50,7 @@
 	
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="index.html">Taste.<span>it</span> <a href="/user_details/"><img style="border-radius: 50px;" src="{{ x.photo }}" alt="" height="50px" width="50px"></a></a>
+			<a class="navbar-brand" href="index.html">Taste.<span>it</span> </a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
 			</button>
@@ -60,37 +60,7 @@
 					<li class="nav-item"><a href="/" class="nav-link">Home</a></li>
 					<li class="nav-item"><a href="/" class="nav-link">About</a></li>
 					
-					<div 
-					class="dropdown show" style="padding-top: 25px; border: none; " >
-						<a style="background-color: transparent; border: none; "
-						class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						  RESTAURANT
-						</a>
-					  
-						<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-						  <a class="dropdown-item" href="/view_restaurant/">View Restaurant</a>
-						
-						</div>
-					  </div>
-					<li class="nav-item"><a href="/" class="nav-link">Menu</a></li>
 					
-					<div 
-					class="dropdown show" style="padding-top: 25px; border: none; " >
-						<a style="background-color: transparent; border: none;"
-						class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						  FEEDBACK
-						</a>
-					  
-						<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-						  <a class="dropdown-item" href="#">Add Food Menu</a>
-						  <a class="dropdown-item" href="#">Add Food Item</a>
-						  <a class="dropdown-item" href="#">Delete Food Menu</a>
-						  <a class="dropdown-item" href="#">Update/Delete Food Item</a>
-						</div>
-					  </div>
-
-					<li class="nav-item"><a href="/" class="nav-link">Orders</a></li>
-					<li class="nav-item"><a href="/user_view_offer/" class="nav-link">Offers</a></li>
                     <li class="nav-item"><a href="/" class="nav-link">Logout</a></li>
 					
 				</ul>
@@ -99,7 +69,7 @@
 	</nav>
 	<!-- END nav -->
 	
-	<section class="hero-wrap hero-wrap-2 aimg8"  data-stellar-background-ratio="0.5">
+	<!-- <section class="hero-wrap hero-wrap-2 aimg8"  data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row no-gutters slider-text align-items-end justify-content-center">
@@ -109,16 +79,14 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 
-	
-
-	<!-- <section class="hero-wrap hero-wrap-2  "   data-stellar-background-ratio="0.5">
-		<div class="overlay"></div>
+	<section class="hero-wrap hero-wrap-2 userimg "   data-stellar-background-ratio="0.5">
+		<!-- <div class="overlay"></div> -->
 		<div class="container">
 		  <div class="row no-gutters slider-text align-items-end justify-content-center">
-			<div class="col-md-9 ftco-animate text-center mb-5"> -->
-				<!-- <div class="h1style " style="padding-top: 30px;">
+			<div class="col-md-9 ftco-animate text-center mb-5">
+				<div class="h1style " style="padding-top: 90px;">
 					<div class="heading-section mt-5 mb-4" >
 					<div class="pl-lg-3 ml-md-5" >
 						
@@ -134,12 +102,12 @@
 					<h1 style="color: darkgreen; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">{{ x.state }}</h1>
 					<h1 style="color: darkgreen; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">{{ x.phone }}</h1>
 				</div>
-				</div> -->
-			<!-- </div>
+				</div>
+			</div>
 		  </div>
 		</div>
 	  </section>
-	   -->
+	  
 
 
 	<!-- <section class="ftco-section bg-light userimg ">
@@ -147,8 +115,20 @@
 			<div class="row justify-content-center mb-5 pb-2 ">
 				<div class="col-md-7 text-center heading-section ftco-animate ">
 					<span class="subheading"></span>
+					<div class="h1style ">
+			
 					
-										
+					
+					<h1><b style="font-family: Georgia, 'Times New Roman', Times, serif; color: darkred; font-size: 50px;">Welcome</b></h1>
+					<h1> {{ x.first_name }} {{ x.last_name }}</h1>
+					<h1>{{ x.email }}</h1>
+					<h1>{{ x.address }}</h1>
+					<h1>{{ x.district }}</h1>
+					<h1>{{ x.state }}</h1>
+					<h1>{{ x.phone }}</h1>
+				</div>
+					
+					
 				</div>
 				</div>
 			
