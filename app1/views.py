@@ -289,37 +289,39 @@ def admin_deleteRestaurant(request,id):
     return redirect('/admin_viewRestaurant/')
 
 def res_view_foodMenu(request):
-    datas2=food_menu.objects.all()
-    return render(request,'res_view_foodMenu.html',{'y':datas2})
+    d1=request.session['username']
+    d2=food_menu.objects.filter(restaurant_name=d1)
+    return render(request,'res_view_foodMenu.html',{'y':d2})
 
 def res_update_foodMenu(request,id):
     datas3=food_menu.objects.get(id=id)
+    
     return render(request,'res_update_foodMenu.html',{'x':datas3})
 
 def res_update_foodMenu1(request,id):
     p1=food_menu.objects.get(id=id)
-    try:
-        p1.restaurant_name=request.POST.get('restaurant')
-        p1.menu_name=request.POST.get('menu')
-        p1.type=request.POST.get('type')
-        p1.cruises=request.POST.get('cruises')
-        p1.orgin=request.POST.get('orgin')
-        photo=request.FILES['photo']
-        fs= FileSystemStorage()
-        filename=fs.save(photo.name,photo) 
-        uploaded_file_url=fs.url(filename)
-        p1.photo=uploaded_file_url
-        p1.save()
+    
+    p1.restaurant_name=request.POST.get('restaurant')
+    p1.menu_name=request.POST.get('menu')
+    p1.type=request.POST.get('type')
+    p1.cruises=request.POST.get('cruises')
+    p1.orgin=request.POST.get('orgin')
+    photo=request.FILES['photo']
+    fs= FileSystemStorage()
+    filename=fs.save(photo.name,photo) 
+    uploaded_file_url=fs.url(filename)
+    p1.photo=uploaded_file_url
+    p1.save()
 
-    except:
-        p1.restaurant_name=request.POST.get('restaurant')
-        p1.menu_name=request.POST.get('menu')
-        p1.type=request.POST.get('type')
-        p1.cruises=request.POST.get('cruises')
-        p1.orgin=request.POST.get('orgin')
+    # except:
+    #     p1.restaurant_name=request.POST.get('restaurant')
+    #     p1.menu_name=request.POST.get('menu')
+    #     p1.type=request.POST.get('type')
+    #     p1.cruises=request.POST.get('cruises')
+    #     p1.orgin=request.POST.get('orgin')
 
-        p1.save()
-        return redirect('/res_view_foodMenu/')
+    #     p1.save()
+    return redirect('/res_view_foodMenu/')
 
 def res_delete_foodMenu(request,id):
     datas4=food_menu.objects.get(id=id)
@@ -350,45 +352,47 @@ def offer1(request):
     return redirect('/restaurentHome/')
 
 def res_view_foodItem(request):
-    data1=food_item.objects.all()
-    return render(request,'res_view_foodItem.html',{'x':data1})
+
+    data7=request.session['username']
+    data8=food_item.objects.filter(restaurant_name=data7)
+    return render(request,'res_view_foodItem.html',{'x':data8})
 
 def res_update_foodItem(request,id):
     data2=food_item.objects.get(id=id)
     data3=request.session['username']
     data4=food_menu.objects.filter(restaurant_name=data3)
-    return render(request,'res_update_foodItem.html',{'x':data2,'z':data3,'y':data4})
+    return render(request,'res_update_foodItem.html',{'x':data2,'y':data4})
 
 def res_update_foodItem1(request,id):
     p1=food_item.objects.get(id=id)
-    try:
-        p1.restaurant_name=request.POST.get('restaurant')
-        p1.menu_name=request.POST.get('menu')
-        p1.menu_item_name=request.POST.get('item')
-        p1.quantity=request.POST.get('qty')
-        p1.price=request.POST.get('rs')
-        p1.type=request.POST.get('type')
-        p1.cooking_time=request.POST.get('tym')
-        p1.status=request.POST.get('status')
-        photo=request.FILES['photo']
-        fs= FileSystemStorage()
-        filename=fs.save(photo.name,photo) 
-        uploaded_file_url=fs.url(filename)
-        p1.photo=uploaded_file_url
-        p1.save()
+    
+    p1.restaurant_name=request.POST.get('restaurant')
+    p1.menu_name=request.POST.get('menu')
+    p1.menu_item_name=request.POST.get('item')
+    p1.quantity=request.POST.get('qty')
+    p1.price=request.POST.get('rs')
+    p1.type=request.POST.get('type')
+    p1.cooking_time=request.POST.get('tym')
+    p1.status=request.POST.get('status')
+    photo=request.FILES['photo']
+    fs= FileSystemStorage()
+    filename=fs.save(photo.name,photo) 
+    uploaded_file_url=fs.url(filename)
+    p1.photo=uploaded_file_url
+    p1.save()
 
-    except:
-        p1.restaurant_name=request.POST.get('restaurant')
-        p1.menu_name=request.POST.get('menu')
-        p1.menu_item_name=request.POST.get('item')
-        p1.quantity=request.POST.get('qty')
-        p1.price=request.POST.get('rs')
-        p1.type=request.POST.get('type')
-        p1.cooking_time=request.POST.get('tym')
-        p1.status=request.POST.get('status')
+    # except:
+    #     p1.restaurant_name=request.POST.get('restaurant')
+    #     p1.menu_name=request.POST.get('menu')
+    #     p1.menu_item_name=request.POST.get('item')
+    #     p1.quantity=request.POST.get('qty')
+    #     p1.price=request.POST.get('rs')
+    #     p1.type=request.POST.get('type')
+    #     p1.cooking_time=request.POST.get('tym')
+    #     p1.status=request.POST.get('status')
 
-        p1.save()
-        return redirect('/res_view_foodItem/')
+    #     p1.save()
+    return redirect('/res_view_foodItem/')
 
 def res_delete_foodItem(request,id):
     data5=food_item.objects.get(id=id)

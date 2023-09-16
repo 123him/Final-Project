@@ -81,7 +81,7 @@
 					<form action="/res_update_foodMenu1/{{ x.id }}" method="post" enctype="multipart/form-data" class="appointment-form">
 						{% csrf_token %}
 						<h3 class="mb-3" >Food Menu</h3>
-            
+						
 						<div class="row">
 							<div class="col-md-12">
 								<div class="form-group" >
@@ -95,7 +95,7 @@
 							</div>
 
 
-							<!-- <div class="col-md-12">
+							<div class="col-md-12">
 								<div class="form-group radio">
                                     <label for="" style="font-size: 14px; color: rgb(235, 238, 241);">Type of Food</label><br>
 									<input type="radio"   placeholder="Type" name="type" value="Veg">
@@ -106,7 +106,7 @@
                                     <label for="" style="font-size: 14px; color: rgb(235, 238, 241);">Others</label>
 								</div>
 							</div>
-							 -->
+							
                             <div class="col-md-12">
 								<div class="form-group" >
 									<input type="text" class="form-control" placeholder="Cruises" name="cruises" value="{{ x.cruises }}">
@@ -133,7 +133,7 @@
 							</div>
               
 						</div>
-            
+						
 					</form>
 				</div>
             
