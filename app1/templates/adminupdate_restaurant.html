@@ -71,11 +71,11 @@
 
 	
 
-		<section class="ftco-section ftco-wrap-about ftco-no-pb ftco-no-pt rimg " style="margin-left: 120px; margin-top: 150px; margin-right: 120px; "
+		<section class="ftco-section ftco-wrap-about ftco-no-pb ftco-no-pt rimg " style="margin-left: 120px; margin-top: 150px; margin-right: 120px; ">
 			<div class="container" >
 				<div class="row no-gutters">
 					<div class="col-sm-4 p-4 p-md-5 d-flex align-items-center justify-content-center bg-primary">
-						<form action="/update_restaurantAdmin1/{{ y.id }}" method="post" enctype="multipart/form-data"  class="appointment-form">
+						<form action="/update1/{{ y.id }}" method="post" enctype="multipart/form-data"  class="appointment-form">
 							{% csrf_token %}
 							<h3 class="mb-3" >Create Account</h3>
 				
@@ -145,20 +145,6 @@
 									</div>
 								</div>
 
-								<!-- <div class="col-md-12">
-									<div class="form-group">
-										<input type="text" class="form-control" placeholder="Username" name="user" value="{{ x.username }}">
-									</div>
-								</div> -->
-<!-- 	
-								<div class="col-md-12">
-									<div class="form-group">
-										<input type="text" class="form-control" placeholder="Password" name="pwd" value="{{ x.Password }}">
-									</div>
-								</div>
-	 -->
-								
-	
 								<div class="col-md-12">
 									<div class="form-group">
 										<input type="submit" value="Update Account" class="btn btn-white py-3 px-4">
@@ -167,10 +153,7 @@
 							</div>
 						</form>
 					</div>
-					<div style="padding-left: 20px ;" class="col-sm-8 wrap-about py-5 ftco-animate img ">
-						
-						</div>
-					</div>
+				
 				</div>
 			</div>
 		</section>

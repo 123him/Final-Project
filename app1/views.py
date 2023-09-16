@@ -205,7 +205,7 @@ def admin_updateRestaurant(request,id):
     datas=restaurant_account.objects.get(id=id)
     return render(request,'admin_updateRestaurant.html',{'y':datas})
 
-def update_restaurantAdmin1(request,id):
+def update_restaurantaadmin(request,id):
     p2=restaurant_account.objects.get(id=id)
     try:
         p2.first_name=request.POST.get('fname')
@@ -238,7 +238,50 @@ def update_restaurantAdmin1(request,id):
         p2.status=request.POST.get('status')
 
         p2.save()
-        return redirect('admin_viewRestaurant/')
+        return redirect('adview_restaurant/')
+
+def viewadmin_restaurant(request):
+    d1=restaurant_account.objects.all()
+    return render(request,'viewadmin_restaurant.html',{'x':d1})
+
+def adminupdate_restaurant(request,id):
+    d=restaurant_account.objects.get(id=id)
+    return render(request,'adminupdate_restaurant.html',{'y':d})
+
+def update1(request,id):
+    p2=restaurant_account.objects.get(id=id)
+    try:
+        p2.first_name=request.POST.get('fname')
+        p2.last_name=request.POST.get('lname')
+        p2.restaurant_name=request.POST.get('restaurant_name')
+        p2.phone=request.POST.get('ph')
+        p2.email=request.POST.get('mail')
+        p2.location=request.POST.get('location')                 
+        p2.type_of_restaurant=request.POST.get('type')
+        p2.no_of_staff=request.POST.get('staffs')
+        p2.authorised_person=request.POST.get('authorised')
+        photo=request.FILES['photo']
+        fs=FileSystemStorage()
+        photo=fs.save(photo.name,photo)
+        image1 =fs.url(photo)
+        p2.photo = image1
+        p2.status=request.POST.get('status')
+        p2.save()
+    except:
+        p2.first_name=request.POST.get('fname')
+        p2.last_name=request.POST.get('lname')
+        p2.restaurant_name=request.POST.get('restaurant_name')
+        p2.phone=request.POST.get('ph')
+        p2.email=request.POST.get('mail')
+        p2.location=request.POST.get('location')                 
+        p2.type_of_restaurant=request.POST.get('type')
+        p2.no_of_staff=request.POST.get('staffs')
+    
+        p2.authorised_person=request.POST.get('authorised')
+        p2.status=request.POST.get('status')
+
+        p2.save()
+        return redirect('viewadmin_restaurant/')
 
 def admin_deleteRestaurant(request,id):
     datas1=restaurant_account.objects.get(id=id)
@@ -304,7 +347,7 @@ def offer1(request):
     p1.photo=uploaded_file_url
     p1.save()
 
-    return redirect('/res_offer/')
+    return redirect('/restaurentHome/')
 
 def res_view_foodItem(request):
     data1=food_item.objects.all()

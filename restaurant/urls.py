@@ -45,9 +45,10 @@ urlpatterns = [
     path('account/',views.account),
     path('login1/',views.login1),
     path('account2/',views.account2),
-    path('admin_viewRestaurant/',views.admin_viewRestaurant),
-    path('admin_updateRestaurant/<int:id>',views.admin_updateRestaurant),
-    path('update_restaurantAdmin1/<int:id>',views.update_restaurantAdmin1),
+   
+    path('viewadmin_restaurant/',views.viewadmin_restaurant),
+    path('adminupdate_restaurant/<int:id>',views.adminupdate_restaurant),
+    path('update1/<int:id>',views.update1),
     path('admin_deleteRestaurant/<int:id>',views.admin_deleteRestaurant),
     path('res_view_foodMenu/',views.res_view_foodMenu),
     path('res_update_foodMenu/<int:id>',views.res_update_foodMenu),
