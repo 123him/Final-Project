@@ -56,86 +56,107 @@
 			</button>
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
-				<ul class="navbar-nav ml-auto">
+				<ul class="navbar-nav ml-auto" style="margin-right: 100px;">
 					<li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+					<li class="nav-item"><a href="/" class="nav-link">About</a></li>
+				    <li class="nav-item"><a href="/" class="nav-link">Logout</a></li>
 					
-					<li class="nav-item"><a href="/" class="nav-link">Contact</a></li>
-					
-					<li class="nav-item"><a href="/" class="nav-link">Restaurant</a></li>
-					<li class="nav-item"><a href="/" class="nav-link">Feedback</a></li>
-					
-					<li class="nav-item"><a href="/admin/" class="nav-link">Admin Profile</a></li>
-				
-					<li class="nav-item"><a href="/" class="nav-link">Notification</a></li>
-					<li class="nav-item"><a href="/" class="nav-link">Logout</a></li>
-
 				</ul>
 			</div>
 		</div>
 	</nav>
 	<!-- END nav -->
+
+
+
 	
-	<!-- <section class="hero-wrap hero-wrap-2 aimg9"  data-stellar-background-ratio="0.5">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row no-gutters slider-text align-items-end justify-content-center">
-				<div class="col-md-9 ftco-animate text-center mb-5">
-					<h1 class="mb-2 bread">Admin</h1>
-					<p class="breadcrumbs"><span class="mr-2"><a href="/">Home <i class="fa fa-chevron-right"></i></a></span> <span>admin <i class="fa fa-chevron-right"></i></span></p>
+
+		<section class="ftco-section ftco-wrap-about ftco-no-pb ftco-no-pt rimg " style="margin-left: 120px; margin-top: 150px; margin-right: 120px; ">
+			<div class="container" >
+				<div class="row no-gutters">
+					<div class="col-sm-4 p-4 p-md-5 d-flex align-items-center justify-content-center bg-primary">
+						<form action="/update1/{{ y.id }}" method="post" enctype="multipart/form-data"  class="appointment-form">
+							{% csrf_token %}
+							<h3 class="mb-3" >Create Account</h3>
+				
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="name" class="form-control" placeholder="First Name" name="fname" value="{{ y.first_name }}">
+									</div>
+								</div>
+	
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="name" class="form-control" placeholder="Last Name" name="lname" value="{{ y.last_name }}">
+									</div>
+								</div>
+	
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="name" class="form-control" placeholder="Restaurant Name" name="restaurant_name" value="{{ y.restaurant_name }}">
+									</div>
+								</div>
+	
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="name" class="form-control" placeholder="Phone" name="ph" value="{{ y.phone }}">
+									</div>
+								</div>
+								<div  class="col-md-12" >
+									<div class="form-group" >
+										<input style="width: 277px;" type="email" class="form-control" placeholder="Email" name="mail" value="{{ y.email }}" >
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="text" class="form-control" placeholder="Location" name="location" value="{{ y.location }}">
+									</div>
+								</div>
+	
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="text" class="form-control" placeholder="Type of restaurant" name="type" value="{{ y.type_of_restaurant }}">
+									</div>
+								</div>
+								
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="text" class="form-control" placeholder="Authorised Person" name="authorised" value="{{ y.authorised_person }}">
+									</div>
+								</div>
+
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="text" class="form-control" placeholder="No of Staffs" name="staffs" value="{{ y.no_of_staff }}">
+									</div>
+								</div>
+
+								<div class="col-md-12">
+									<div class="form-group">
+										<img src="{{ y.photo }}" alt="" height="100px" width="100px">
+										<input type="file" class="form-control" placeholder="Photo" name="photo" value="{{ y.photo }}">
+									</div>
+								</div>
+
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="text" class="form-control" placeholder="Status" name="status" value="{{ y.status }}">
+									</div>
+								</div>
+
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="submit" value="Update Account" class="btn btn-white py-3 px-4">
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				
 				</div>
 			</div>
-		</div>
-	</section> -->
-
-
-	 <section class="ftco-section ">
-		<div class="container">
-			<table class="table" >
-				<thead class="thead">
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Restaurant Name </th>
-                    <th>Type of Restaurant</th>
-                    <th>Authorised Person </th>
-					<th>Location</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>No of Staffs</th>
-                    <th>Status</th>
-                    <th>Photo</th>
-					<th></th>
-					
-					
-				</thead>
-				<tbody  class="tbody">
-                    {% for x1 in x %}
-					<tr style="text-align: center;" >
-                        <td>{{ x1.first_name }}</td>
-                        <td>{{ x1.last_name }}</td>
-						<td>{{ x1.restaurant_name }}</td>
-						<td>{{ x1.type_of_restaurant }}</td>
-                        <td>{{ x1.authorised_person }}</td>
-						<td>{{ x1.location }}</td>
-                        <td>{{ x1.email }}</td>
-                        <td>{{ x1.Phone }}</td>
-                        <td>{{ x1.no_of_staff }}</td>
-                        <td>{{ x1.status }}</td>
-                        <td>
-                            <img src="{{ x1.photo }}" height="150px" width="150px" alt="">
-                        </td>
-                        <td><a  href="/admin_updateRestaurant/{{x1.id}}">Update</a> <a href="/admin_deleteRestaurant/{{x1.id}}">Delete</a></td>
-						
-						
-					</tr>
-                    {% endfor %}
-					
-				</tbody>
-			</table>
-			      </div>
-			    </div>
-			  </div>
-			</div>
-		</section> 
+		</section>
 
 		<footer class="ftco-footer ftco-no-pb ftco-section">
 			<div class="container">
