@@ -71,36 +71,36 @@
 
 	
 
-		<section class="ftco-section ftco-wrap-about ftco-no-pb ftco-no-pt rimg " style="margin-left: 120px; margin-top: 150px; margin-right: 120px; "
+		<section class="ftco-section ftco-wrap-about ftco-no-pb ftco-no-pt rimg " style="margin-left: 120px; margin-top: 150px; margin-right: 120px;">
 			<div class="container" >
 				<div class="row no-gutters">
 					<div class="col-sm-4 p-4 p-md-5 d-flex align-items-center justify-content-center bg-primary">
 						<form action="/account2/" method="post" enctype="multipart/form-data"  class="appointment-form">
 							{% csrf_token %}
-							<h3 class="mb-3" >Create Account</h3>
+							<h3 class="mb-3" >Create &nbsp; Restaurant Account</h3>
 				
 							<div class="row">
 								<div class="col-md-12">
 									<div class="form-group">
-										<input type="name" class="form-control" placeholder="First Name" name="fname">
+										<input type="text" class="form-control" placeholder="First Name" name="fname">
 									</div>
 								</div>
 	
 								<div class="col-md-12">
 									<div class="form-group">
-										<input type="name" class="form-control" placeholder="Last Name" name="lname">
+										<input type="text" class="form-control" placeholder="Last Name" name="lname">
 									</div>
 								</div>
 	
 								<div class="col-md-12">
 									<div class="form-group">
-										<input type="name" class="form-control" placeholder="Restaurant Name" name="restaurant_name">
+										<input type="text" class="form-control" placeholder="Restaurant Name" name="restaurant">
 									</div>
 								</div>
 	
 								<div class="col-md-12">
 									<div class="form-group">
-										<input type="name" class="form-control" placeholder="Phone" name="ph">
+										<input type="number" class="form-control" placeholder="Phone" name="ph">
 									</div>
 								</div>
 								<div  class="col-md-12" >
@@ -128,13 +128,13 @@
 
 								<div class="col-md-12">
 									<div class="form-group">
-										<input type="text" class="form-control" placeholder="No of Staff" name="staffs">
+										<input type="text" class="form-control" placeholder="No of Staff" name="staff">
 									</div>
 								</div>
 
 								<div class="col-md-12">
 									<div class="form-group">
-										<input type="file" class="form-control" placeholder="Photo" name="photo">
+										<input type="file" class="form-control" placeholder="Photo" name="img">
 									</div>
 								</div>
 
@@ -166,13 +166,11 @@
 							</div>
 						</form>
 					</div>
-					<div style="padding-left: 20px ;" class="col-sm-8 wrap-about py-5 ftco-animate img ">
-						
-						</div>
-					</div>
 				</div>
 			</div>
-		</section>
+				
+		</div>
+	</section>
 
 		<footer class="ftco-footer ftco-no-pb ftco-section">
 			<div class="container">
