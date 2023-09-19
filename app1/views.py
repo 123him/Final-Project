@@ -281,7 +281,7 @@ def update1(request,id):
         p2.status=request.POST.get('status')
 
         p2.save()
-        return redirect('viewadmin_restaurant/')
+        return redirect('/viewadmin_restaurant/')
 
 def admin_deleteRestaurant(request,id):
     datas1=restaurant_account.objects.get(id=id)
