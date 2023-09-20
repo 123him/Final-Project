@@ -409,3 +409,7 @@ def user_details(request):
 def public_restaurant(request):
     data3=restaurant_account.objects.all()
     return render(request,'public_restaurant.html',{'x':data3})
+
+def public_offers(request):
+    dat=offer.objects.all()
+    return render(request,'public_offers.html',{'x':dat})
