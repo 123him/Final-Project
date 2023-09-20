@@ -61,7 +61,8 @@ urlpatterns = [
     path('res_update_foodItem1/<int:id>',views.res_update_foodItem1),
     path('res_delete_foodItem/<int:id>',views.res_delete_foodItem),
     path('user_view_offer/',views.user_view_offer),
-    path('user_details/',views.user_details)
+    path('user_details/',views.user_details),
+    path('rest/',views.public_restaurant),
     
 ]
 if settings.DEBUG:

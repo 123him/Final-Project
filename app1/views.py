@@ -405,3 +405,7 @@ def user_details(request):
     a2=request.session['username']
     a1=user_account.objects.get(username=a2)
     return render(request,'user_details.html',{'x':a1})
+
+def public_restaurant(request):
+    data3=restaurant_account.objects.all()
+    return render(request,'public_restaurant.html',{'x':data3})
