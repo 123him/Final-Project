@@ -413,3 +413,4 @@ def public_restaurant(request):
 def public_offers(request):
     dat=offer.objects.all()
     return render(request,'public_offers.html',{'x':dat})
+
