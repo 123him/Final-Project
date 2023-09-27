@@ -350,7 +350,6 @@ def offer1(request):
     return redirect('/restaurentHome/')
 
 def res_view_foodItem(request):
-
     data7=request.session['username']
     data8=food_item.objects.filter(restaurant_name=data7)
     return render(request,'res_view_foodItem.html',{'x':data8})
@@ -414,3 +413,50 @@ def public_offers(request):
     dat=offer.objects.all()
     return render(request,'public_offers.html',{'x':dat})
 
+def res_view_offers(request):
+    off4=request.session['username']
+    off5=offer.objects.filter(restaurant_name=off4)
+    return render(request,'res_view_offers.html',{'y':off5})
+
+def res_update_offers(request,id):
+    off1=offer.objects.get(id=id)
+    off2=request.session['username']
+    off3=food_item.objects.filter(restaurant_name=off2)
+    return render(request,'res_update_offers.html',{'x':off1})
+
+
+
+def offer2(request,id):
+    p1=offer.objects.get(id=id)
+    try:
+        p1.restaurant_name=request.POST.get('restaurant')
+        p1.menu_item_name=request.POST.get('menu_item')
+        p1.offer=request.POST.get('offer')
+        p1.start_date=request.POST.get('start')
+        p1.end_date=request.POST.get('end')
+        p1.details=request.POST.get('details')
+        p1.status=request.POST.get('status')
+
+        photo=request.FILES['photo']
+        fs= FileSystemStorage()
+        filename=fs.save(photo.name,photo) 
+        uploaded_file_url=fs.url(filename)
+        p1.photo=uploaded_file_url
+        p1.save()
+
+    except:
+        p1.restaurant_name=request.POST.get('restaurant')
+        p1.menu_item_name=request.POST.get('menu_item')
+        p1.offer=request.POST.get('offer')
+        p1.start_date=request.POST.get('start')
+        p1.end_date=request.POST.get('end')
+        p1.details=request.POST.get('details')
+        p1.status=request.POST.get('status')
+        p1.save()
+
+    return redirect('/restaurentHome/')
+    
+def res_delete_offers(request,id):
+    off6=offer.objects.get(id=id)
+    off6.delete()
+    return redirect('/res_view_offers')
