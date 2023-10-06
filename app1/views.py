@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth import authenticate
  
-from app1.models import user_account,restaurant_account,tbl_accounts,food_menu,food_item,offer
+from app1.models import user_account,restaurant_account,tbl_accounts,food_menu,food_item,offer,tbl_cart
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.files.storage import FileSystemStorage
@@ -460,3 +460,34 @@ def res_delete_offers(request,id):
     off6=offer.objects.get(id=id)
     off6.delete()
     return redirect('/res_view_offers')
+
+
+def cart(request,id):
+    crt=food_item.objects.get(id=id)
+
+    return render(request,'cart.html',{'x': crt})
+
+
+def cart1(request):
+    c1=tbl_cart()
+
+    c1.restaurant_name=request.POST.get('restaurant')
+    c1.menu_name=request.POST.get('menu')
+    c1.menu_item_name=request.POST.get('item')
+    c1.quantity=request.POST.get('qty')
+    c1.price=request.POST.get('rs')
+    # c1.type=request.POST.get('type')
+    # c1.cooking_time=request.POST.get('tym')
+    # c1.status=request.POST.get('status')
+    # photo=request.FILES['photo']
+    # fs= FileSystemStorage()
+    # filename=fs.save(photo.name,photo) 
+    # uploaded_file_url=fs.url(filename)
+    # c1.photo=uploaded_file_url
+    c1.photo=request.POST.get('photo')
+    c1.save()
+    return redirect('/view_restaurant/')
+
+def viewcart(request):
+    crt2=tbl_cart.objects.all()
+    return render(request,'view_cart.html',{'x':crt2})

@@ -99,3 +99,17 @@ class tbl_accounts(models.Model):
 
     class Meta:
         db_table='tbl_accounts'
+
+class tbl_cart(models.Model):
+    restaurant_name=models.CharField(max_length=50)
+    menu_name=models.CharField(max_length=50)
+    menu_item_name=models.CharField(max_length=50)
+    quantity=models.IntegerField()
+    price=models.IntegerField()
+    # type=models.CharField(max_length=50)
+    # cooking_time=models.CharField(max_length=50)
+    # status=models.CharField(max_length=50)
+    photo=models.CharField(max_length=500)
+
+    class Meta:
+        db_table='tbl_cart'

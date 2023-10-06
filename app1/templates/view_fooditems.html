@@ -90,10 +90,11 @@
 	 
 		<div class="container" style="margin-top: 50px;">
 			<table class="table" >
-				<thead class="thead">
+				<thead class="thead" >
 					<th>Menu Name </th>
                     <th>Menu Item Name</th>
 					<th>Photo</th>
+					<th></th>
 					
 					
 				</thead>
@@ -105,7 +106,7 @@
 						<td>
                             <img src="{{ y1.photo }}" height="150px" width="150px" alt="">
                         </td>
-						
+						<td><a href="/cart/{{y1.id}}">ADD to CART</a></td>
 					</tr>
                     {% endfor %}
 					

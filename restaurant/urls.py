@@ -68,7 +68,9 @@ urlpatterns = [
     path('res_update_offers/<int:id>',views.res_update_offers),
     path('offer2/<int:id>',views.offer2),
     path('res_delete_offers/<int:id>',views.res_delete_offers),
-    
+    path('cart/<int:id>',views.cart),
+    path('cart1/',views.cart1),
+    path('viewcart/',views.viewcart)
     
 ]
 if settings.DEBUG:
