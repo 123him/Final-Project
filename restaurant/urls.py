@@ -64,7 +64,13 @@ urlpatterns = [
     path('user_details/',views.user_details),
     path('rest/',views.public_restaurant),
     path('offers/',views.public_offers),
-    
+    path('res_view_offers/',views.res_view_offers),
+    path('res_update_offers/<int:id>',views.res_update_offers),
+    path('offer2/<int:id>',views.offer2),
+    path('res_delete_offers/<int:id>',views.res_delete_offers),
+    path('cart/<int:id>',views.cart),
+    path('cart1/',views.cart1),
+    path('viewcart/',views.viewcart)
     
 ]
 if settings.DEBUG:

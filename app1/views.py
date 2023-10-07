@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth import authenticate
  
-from app1.models import user_account,restaurant_account,tbl_accounts,food_menu,food_item,offer
+from app1.models import user_account,restaurant_account,tbl_accounts,food_menu,food_item,offer,tbl_cart
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.files.storage import FileSystemStorage
@@ -350,7 +350,6 @@ def offer1(request):
     return redirect('/restaurentHome/')
 
 def res_view_foodItem(request):
-
     data7=request.session['username']
     data8=food_item.objects.filter(restaurant_name=data7)
     return render(request,'res_view_foodItem.html',{'x':data8})
@@ -414,3 +413,81 @@ def public_offers(request):
     dat=offer.objects.all()
     return render(request,'public_offers.html',{'x':dat})
 
+def res_view_offers(request):
+    off4=request.session['username']
+    off5=offer.objects.filter(restaurant_name=off4)
+    return render(request,'res_view_offers.html',{'y':off5})
+
+def res_update_offers(request,id):
+    off1=offer.objects.get(id=id)
+    off2=request.session['username']
+    off3=food_item.objects.filter(restaurant_name=off2)
+    return render(request,'res_update_offers.html',{'x':off1})
+
+
+
+def offer2(request,id):
+    p1=offer.objects.get(id=id)
+    try:
+        p1.restaurant_name=request.POST.get('restaurant')
+        p1.menu_item_name=request.POST.get('menu_item')
+        p1.offer=request.POST.get('offer')
+        p1.start_date=request.POST.get('start')
+        p1.end_date=request.POST.get('end')
+        p1.details=request.POST.get('details')
+        p1.status=request.POST.get('status')
+
+        photo=request.FILES['photo']
+        fs= FileSystemStorage()
+        filename=fs.save(photo.name,photo) 
+        uploaded_file_url=fs.url(filename)
+        p1.photo=uploaded_file_url
+        p1.save()
+
+    except:
+        p1.restaurant_name=request.POST.get('restaurant')
+        p1.menu_item_name=request.POST.get('menu_item')
+        p1.offer=request.POST.get('offer')
+        p1.start_date=request.POST.get('start')
+        p1.end_date=request.POST.get('end')
+        p1.details=request.POST.get('details')
+        p1.status=request.POST.get('status')
+        p1.save()
+
+    return redirect('/restaurentHome/')
+    
+def res_delete_offers(request,id):
+    off6=offer.objects.get(id=id)
+    off6.delete()
+    return redirect('/res_view_offers')
+
+
+def cart(request,id):
+    crt=food_item.objects.get(id=id)
+
+    return render(request,'cart.html',{'x': crt})
+
+
+def cart1(request):
+    c1=tbl_cart()
+
+    c1.restaurant_name=request.POST.get('restaurant')
+    c1.menu_name=request.POST.get('menu')
+    c1.menu_item_name=request.POST.get('item')
+    c1.quantity=request.POST.get('qty')
+    c1.price=request.POST.get('rs')
+    # c1.type=request.POST.get('type')
+    # c1.cooking_time=request.POST.get('tym')
+    # c1.status=request.POST.get('status')
+    # photo=request.FILES['photo']
+    # fs= FileSystemStorage()
+    # filename=fs.save(photo.name,photo) 
+    # uploaded_file_url=fs.url(filename)
+    # c1.photo=uploaded_file_url
+    c1.photo=request.POST.get('photo')
+    c1.save()
+    return redirect('/view_restaurant/')
+
+def viewcart(request):
+    crt2=tbl_cart.objects.all()
+    return render(request,'view_cart.html',{'x':crt2})
