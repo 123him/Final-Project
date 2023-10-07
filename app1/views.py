@@ -470,12 +470,13 @@ def cart(request,id):
 
 def cart1(request):
     c1=tbl_cart()
-
-    c1.restaurant_name=request.POST.get('restaurant')
-    c1.menu_name=request.POST.get('menu')
-    c1.menu_item_name=request.POST.get('item')
+    id=request.POST.get('id')
+    c=food_item.objects.get(id=id)
+    c1.restaurant_name=c.restaurant_name
+    c1.menu_name=c.menu_name
+    c1.menu_item_name=c.menu_item_name
     c1.quantity=request.POST.get('qty')
-    c1.price=request.POST.get('rs')
+    c1.price=c.price
     # c1.type=request.POST.get('type')
     # c1.cooking_time=request.POST.get('tym')
     # c1.status=request.POST.get('status')
@@ -484,7 +485,7 @@ def cart1(request):
     # filename=fs.save(photo.name,photo) 
     # uploaded_file_url=fs.url(filename)
     # c1.photo=uploaded_file_url
-    c1.photo=request.POST.get('photo')
+    c1.photo=c.photo
     c1.save()
     return redirect('/view_restaurant/')
 
