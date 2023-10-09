@@ -108,7 +108,7 @@ class tbl_cart(models.Model):
     price=models.IntegerField()
     # type=models.CharField(max_length=50)
     # cooking_time=models.CharField(max_length=50)
-    # status=models.CharField(max_length=50)
+    status=models.CharField(max_length=50)
     photo=models.CharField(max_length=500)
 
     class Meta:

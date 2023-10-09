@@ -25,6 +25,7 @@ def user1(request):
     return render(request,'user1.html')
 
 
+
 def restur(request):
     return render(request,'restaurant.html')
 
@@ -138,7 +139,7 @@ def account2(request):
     p1.save()
     p2.save()
     p3.save()
-    return redirect('/login/')
+    return redirect('/admin1/')
 
 def create_restaurant(request):
     return render(request,'create_restaurant.html')
@@ -478,7 +479,7 @@ def cart1(request):
     c1.price=request.POST.get('rs')
     # c1.type=request.POST.get('type')
     # c1.cooking_time=request.POST.get('tym')
-    # c1.status=request.POST.get('status')
+    c1.status=request.POST.get('status')
     # photo=request.FILES['photo']
     # fs= FileSystemStorage()
     # filename=fs.save(photo.name,photo) 
