@@ -106,8 +106,7 @@ class tbl_cart(models.Model):
     menu_item_name=models.CharField(max_length=50)
     quantity=models.IntegerField()
     price=models.IntegerField()
-    # type=models.CharField(max_length=50)
-    # cooking_time=models.CharField(max_length=50)
+    total_price=models.IntegerField()
     status=models.CharField(max_length=50)
     photo=models.CharField(max_length=500)
 

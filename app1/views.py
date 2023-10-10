@@ -478,9 +478,8 @@ def cart1(request):
     c1.menu_item_name=c.menu_item_name
     c1.quantity=request.POST.get('qty')
     c1.price=c.price
-    # c1.type=request.POST.get('type')
-    # c1.cooking_time=request.POST.get('tym')
-    c1.status=request.POST.get('status')
+    c1.total_price=int(c1.price)*int(c1.quantity)
+    # c1.status=request.POST.get('status')
     # photo=request.FILES['photo']
     # fs= FileSystemStorage()
     # filename=fs.save(photo.name,photo) 
