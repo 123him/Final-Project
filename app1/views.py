@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth import authenticate
  
-from app1.models import user_account,restaurant_account,tbl_accounts,food_menu,food_item,offer,tbl_cart
+from app1.models import user_account,restaurant_account,tbl_accounts,food_menu,food_item,offer,tbl_cart,tbl_order
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.files.storage import FileSystemStorage
@@ -492,3 +492,12 @@ def cart1(request):
 def viewcart(request):
     crt2=tbl_cart.objects.all()
     return render(request,'view_cart.html',{'x':crt2})
+
+def order(request):
+    return render(request,'view_order.html')
+
+def view_order(request):
+    pdt=request.session['username']
+    pdt1=tbl_cart.objects.filter(restaurant_name=pdt)
+
+    return render(request,'res_view_order.html',{'x':pdt1})

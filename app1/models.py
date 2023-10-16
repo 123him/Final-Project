@@ -112,3 +112,16 @@ class tbl_cart(models.Model):
 
     class Meta:
         db_table='tbl_cart'
+
+class tbl_order(models.Model):
+    
+    username=models.CharField(max_length=50)
+    menu_item_name=models.CharField(max_length=50)
+    resturant_name=models.CharField(max_length=50)
+    order_date=models.CharField(max_length=50)
+    status=models.CharField(max_length=50)
+    payment_mode=models.CharField(max_length=50)
+    total_price=models.IntegerField()
+
+    class Meta:
+        db_table='tbl_order'
