@@ -493,11 +493,33 @@ def viewcart(request):
     crt2=tbl_cart.objects.all()
     return render(request,'view_cart.html',{'x':crt2})
 
-def order(request):
-    return render(request,'view_order.html')
+def order(request,id):
+    odr=request.session['username']
+    odr1=tbl_cart.objects.get(id=id)
+    return render(request,'order.html',{'y':odr,'x':odr1})
 
-def view_order(request):
-    pdt=request.session['username']
-    pdt1=tbl_cart.objects.filter(restaurant_name=pdt)
+def order1(request):
+    odr3=tbl_order()
 
-    return render(request,'res_view_order.html',{'x':pdt1})
+    odr3.username=request.POST.get('user')
+    odr3.menu_item_name=request.POST.get('item')
+    odr3.resturant_name=request.POST.get('restaurant')
+    odr3.order_date=request.POST.get('order_date')
+    odr3.status=request.POST.get('status')
+    # odr3.payment_mode=request.POST.get('payment')
+    odr3.total_price=request.POST.get('price')
+    odr3.save()
+
+    
+
+    return redirect('/viewcart/')
+
+def view_order(request,restaurant_name):
+    odr4=tbl_order.objects.all()
+
+    return render(request,'res_view_order.html',{'x':odr4})
+
+def orderdel(request,id):
+    ord5=tbl_order.objects.get(id=id)
+    ord5.delete()
+    return redirect('/view_order/')

@@ -72,8 +72,10 @@ urlpatterns = [
     path('cart/<int:id>',views.cart),
     path('cart1/',views.cart1),
     path('viewcart/',views.viewcart),
-    path('order/',views.order),
-    path('view_order/',views.view_order)
+    path('order/<int:id>',views.order),
+    path('view_order/',views.view_order),
+    path('order1/',views.order1),
+    path('order_delete/<int:id>',views.orderdel)
    
     
 ]
