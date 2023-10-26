@@ -80,7 +80,7 @@
 		<div class="container">
 			<div class="row no-gutters slider-text align-items-end justify-content-center">
 				<div class="col-md-9 ftco-animate text-center mb-5">
-					<h1 class="mb-2 bread">Update/Delete Food Item</h1>
+					<h1 class="mb-2 bread">Orders</h1>
 					<p class="breadcrumbs"><span class="mr-2"><a href="/">Home <i class="fa fa-chevron-right"></i></a></span> <span>admin <i class="fa fa-chevron-right"></i></span></p>
 				</div>
 			</div>
@@ -92,13 +92,16 @@
 			<table class="table" >
 				<thead class="thead">
                     
-                    <th>Menu Name</th>
+                    <th>Username</th>
+					<th>Restaurant</th>
                     <th>Menu Item Name</th>
-					<th>Quantity</th>
-					<th>Price</th>
+					<th>Order Date</th>
 					<th>Total Price</th>
-					<th>Photo</th>
+					<th>Payment Mode</th>
+					
+					<th>Status</th>
 					<th></th>
+					
 					
 					
 				</thead>
@@ -106,16 +109,14 @@
                     {% for x1 in x %}
 					<tr style="text-align: center;" >
 						
-						<td>{{ x1.menu_name }}</td>
+						<td>{{ x1.username }}</td>
+						<td>{{ x1.resturant_name }}</td>
                         <td>{{ x1.menu_item_name }}</td>
-                        <td>{{ x1.quantity }}</td>
-                        <td>{{ x1.price }}</td>
-						<td>{{ x1.total_price }}</td>
-						
-						<td>
-                            <img src="{{ x1.photo }}" height="150px" width="150px" alt="">
-                        </td>
-						<td><a href="/res_update_foodItem/{{x1.id}}">Update</a> <br> <a href="/res_delete_foodItem/{{x1.id}}">Delete</a></td>
+                        <td>{{ x1.order_date }}</td>
+                        <td>{{ x1.total_price }}</td>
+						<td>{{ x1.payment_mode }}</td>
+						<td>{{ x1.status }}</td>
+						<td><a href="/order_confirm/{{x1.id}}">Confirm</a> <br> <a href="/order_delete/{{x1.id}}">Reject</a></td>
 						
 					</tr>
                     {% endfor %}
