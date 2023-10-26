@@ -101,13 +101,14 @@ class tbl_accounts(models.Model):
         db_table='tbl_accounts'
 
 class tbl_cart(models.Model):
+    username=models.CharField(max_length=50)
     restaurant_name=models.CharField(max_length=50)
     menu_name=models.CharField(max_length=50)
     menu_item_name=models.CharField(max_length=50)
     quantity=models.IntegerField()
     price=models.IntegerField()
     total_price=models.IntegerField()
-    status=models.CharField(max_length=50)
+    status=models.CharField(max_length=50,default='available')
     photo=models.CharField(max_length=500)
 
     class Meta:

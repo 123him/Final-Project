@@ -471,8 +471,10 @@ def cart(request,id):
 
 def cart1(request):
     c1=tbl_cart()
+    a=request.session['username']
     id=request.POST.get('id')
     c=food_item.objects.get(id=id)
+    c1.username=a
     c1.restaurant_name=c.restaurant_name
     c1.menu_name=c.menu_name
     c1.menu_item_name=c.menu_item_name
@@ -490,7 +492,8 @@ def cart1(request):
     return redirect('/view_restaurant/')
 
 def viewcart(request):
-    crt2=tbl_cart.objects.all()
+    crt3=request.session['username']
+    crt2=tbl_cart.objects.filter(username=crt3,status="available")
     return render(request,'view_cart.html',{'x':crt2})
 
 def order(request,id):
@@ -499,27 +502,50 @@ def order(request,id):
     return render(request,'order.html',{'y':odr,'x':odr1})
 
 def order1(request):
+    id=request.POST.get('id')
+    c=tbl_cart.objects.get(id=id)
     odr3=tbl_order()
 
     odr3.username=request.POST.get('user')
     odr3.menu_item_name=request.POST.get('item')
     odr3.resturant_name=request.POST.get('restaurant')
     odr3.order_date=request.POST.get('order_date')
-    odr3.status=request.POST.get('status')
-    # odr3.payment_mode=request.POST.get('payment')
+    odr3.status="in-order"
+    odr3.payment_mode=request.POST.get('Payment')
     odr3.total_price=request.POST.get('price')
+    c.status="in-order"
     odr3.save()
-
+    c.save()
     
 
     return redirect('/viewcart/')
 
-def view_order(request,restaurant_name):
-    odr4=tbl_order.objects.all()
+def view_order(request):
+    a=request.session['username']
+    odr4=tbl_order.objects.filter(resturant_name=a,status='in-order')
 
     return render(request,'res_view_order.html',{'x':odr4})
 
 def orderdel(request,id):
     ord5=tbl_order.objects.get(id=id)
-    ord5.delete()
+    
+    ord5.status="order-cancelled"
+    ord5.save()
     return redirect('/view_order/')
+
+def orderconf(request,id):
+    a=tbl_order.objects.get(id=id)
+    a.status="order-approved"
+    a.save()
+    return redirect('/view_order/')
+
+def view_order(request):
+    a=request.session['username']
+    b=tbl_order.objects.filter(username=a,status='order-approved')
+    print(a,"test") 
+    return render(request,'view_order.html',{'x':b})
+
+def cancel_order(request):
+    a=request.session['username']
+    b=tbl_order.objects.filter(username=a,status='order-cancelled')
+    return render(request,'cancelled_order.html',{'x':b})
