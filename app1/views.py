@@ -539,7 +539,7 @@ def orderconf(request,id):
     a.save()
     return redirect('/view_order/')
 
-def view_order(request):
+def user_view_order(request):
     a=request.session['username']
     b=tbl_order.objects.filter(username=a,status='order-approved')
     print(a,"test") 

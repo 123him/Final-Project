@@ -77,7 +77,7 @@ urlpatterns = [
     path('order1/',views.order1),
     path('order_delete/<int:id>',views.orderdel),
     path('order_confirm/<int:id>',views.orderconf),
-    path('view_order/',views.view_order),
+    path('user_view_order/',views.user_view_order),
     path('cancelled_order/',views.cancel_order)
    
     
