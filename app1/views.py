@@ -22,7 +22,7 @@ def admin1(request):
 def user1(request):
     data=request.session['username']
     data7=user_account.objects.get(username=data)
-    return render(request,'user1.html')
+    return render(request,'user1.html',{'x':data})
 
 
 
@@ -520,32 +520,72 @@ def order1(request):
 
     return redirect('/viewcart/')
 
-def view_order(request):
+
+
+
+
+
+
+def user_view_order(request):
+    a=request.session['username']
+    b=tbl_order.objects.filter(username=a)
+    return render(request,'view_order.html',{'x':b})
+
+def userconfirm_order(request):
+    a=request.session['username']
+    b=tbl_order.objects.filter(status='order-approved')
+    return render(request,'userconfirm_order.html',{'x':b})
+
+def usercanceled_order(request):
+    a=request.session['username']
+    b=tbl_order.objects.filter(status='order-cancelled')
+    return render(request,'usercanceled_order.html',{'x':b})
+
+def resview_order(request):
     a=request.session['username']
     odr4=tbl_order.objects.filter(resturant_name=a,status='in-order')
 
     return render(request,'res_view_order.html',{'x':odr4})
+
+def orderconf(request,id):
+    a=tbl_order.objects.get(id=id)
+    a.status="order-approved"
+    a.save()
+    return redirect('/resview_order/')
 
 def orderdel(request,id):
     ord5=tbl_order.objects.get(id=id)
     
     ord5.status="order-cancelled"
     ord5.save()
-    return redirect('/view_order/')
+    return redirect('/resview_order/')
 
-def orderconf(request,id):
-    a=tbl_order.objects.get(id=id)
-    a.status="order-approved"
-    a.save()
-    return redirect('/view_order/')
-
-def user_view_order(request):
+def resconfirm_order(request):
     a=request.session['username']
-    b=tbl_order.objects.filter(username=a,status='order-approved')
-    print(a,"test") 
-    return render(request,'view_order.html',{'x':b})
+    b=tbl_order.objects.filter(status='order-approved')
 
-def cancel_order(request):
+    return render(request,'resconfirm_order.html',{'x':b})
+
+def rescanceled_order(request):
     a=request.session['username']
-    b=tbl_order.objects.filter(username=a,status='order-cancelled')
-    return render(request,'cancelled_order.html',{'x':b})
+    b=tbl_order.objects.filter(status='order-cancelled')
+    return render(request,'rescancel_order.html',{'y':b})
+
+
+# # def user_view_order(request):
+# #     a=request.session['username']
+# #     b=tbl_order.objects.filter(username=a,status='order-approved')
+# #     print(a,"test") 
+# #     return render(request,'view_order.html',{'x':b})
+
+# # def cancel_order(request):
+# #     a=request.session['username']
+# #     b=tbl_order.objects.filter(username=a,status='order-cancelled')
+# #     return render(request,'cancelled_order.html',{'x':b})
+
+
+
+
+
+
+

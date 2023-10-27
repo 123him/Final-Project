@@ -39,7 +39,7 @@ urlpatterns = [
     path('food_menu/',views.foodmenu1),
     path('addItem/',views.items),
     path('food_item/',views.item1),
-    path('view_restaurant/',views.viewRestaurant),
+   
     path('viewFood_items/<str:restaurant_name>',views.viewFooditems),
     path('chef/',views.chef),
     path('reservation/',views.reservation),
@@ -73,12 +73,22 @@ urlpatterns = [
     path('cart1/',views.cart1),
     path('viewcart/',views.viewcart),
     path('order/<int:id>',views.order),
-    path('view_order/',views.view_order),
     path('order1/',views.order1),
-    path('order_delete/<int:id>',views.orderdel),
-    path('order_confirm/<int:id>',views.orderconf),
+    path('view_restaurant/',views.viewRestaurant),
     path('user_view_order/',views.user_view_order),
-    path('cancelled_order/',views.cancel_order)
+    path('userconfirm_order/',views.userconfirm_order),
+    path('usercancelled_order/',views.usercanceled_order),
+    path('resview_order/',views.resview_order),
+    path('order_confirm/<int:id>',views.orderconf),
+    path('order_delete/<int:id>',views.orderdel),
+    path('resconfirm_order/',views.resconfirm_order),
+    path('rescanceled_order/',views.rescanceled_order),
+   
+    # path('cancelled_order/',views.cancel_order),
+    
+   
+   
+ 
    
     
 ]

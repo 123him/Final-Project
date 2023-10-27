@@ -10148,7 +10148,7 @@ tr:hover{
 }
 .image3{
   background-image: url(../images/about.jpg);
-  margin-inline-end: 0px;
+
   
 }
 
@@ -10372,4 +10372,167 @@ about images */
 }
 .userimg{
 background-image:url(../images/6.jpg);
+}
+
+
+/* menu images */
+ 
+.menu1{
+  background-image: url(../images/breakfast-1.jpg);
+}
+
+.menu2{
+  background-image: url(../images/breakfast-2.jpg);
+}
+.menu3{
+  background-image: url(../images/breakfast-3.jpg);
+}
+
+.menu4{
+  background-image: url(../images/breakfast-4.jpg);
+}
+
+.menu5{
+  background-image: url(../images/breakfast-5.jpg);
+}
+
+.menu6{
+  background-image: url(../images/breakfast-6.jpg);
+}
+
+.menu7{
+  background-image: url(../images/breakfast-7.jpg);
+}
+.menu8{
+  background-image: url(../images/breakfast-8.jpg);
+}
+.menu9{
+  background-image: url(../images/lunch-1.jpg);
+}
+.menu10{
+  background-image: url(../images/lunch-2.jpg);
+}
+
+.menu11{
+  background-image: url(../images/lunch-3.jpg);
+}
+
+.menu12{
+  background-image: url(../images/lunch-4.jpg);
+}
+
+.menu13{
+  background-image: url(../images/lunch-5.jpg);
+}
+.menu14{
+  background-image: url(../images/lunch-6.jpg);
+}
+
+.menu15{
+  background-image: url(../images/lunch-7.jpg);
+}
+
+.menu16{
+  background-image: url(../images/lunch-8.jpg);
+}
+
+.menu17{
+  background-image: url(../images/dinner-1.jpg);
+}
+
+.menu18{
+  background-image: url(../images/dinner-2.jpg);
+}
+
+.menu19{
+  background-image: url(../images/dinner-3.jpg);
+}
+
+.menu20{
+  background-image: url(../images/dinner-4.jpg);
+}
+
+.menu21{
+  background-image: url(../images/dinner-5.jpg);
+}
+
+.menu22{
+  background-image: url(../images/dinner-6.jpg);
+}
+
+.diner1{
+  background-image: url(../images/dessert-1.jpg);
+}
+
+.diner2{
+  background-image: url(../images/dessert-2.jpg);
+}
+.diner3{
+  background-image: url(../images/dessert-3.jpg);
+}
+
+.diner4{
+  background-image: url(../images/dessert-4.jpg);
+}
+
+.diner5{
+  background-image: url(../images/dessert-5.jpg);
+}
+
+.diner6{
+  background-image: url(../images/wine-1.jpg);
+}
+
+.diner7{
+  background-image: url(../images/wine-2.jpg);
+}
+
+.diner8{
+  background-image: url(../images/wine-3.jpg);
+}
+
+.diner9{
+  background-image: url(../images/wine-4.jpg);
+}
+
+.diner10{
+  background-image: url(../images/wine-5.jpg);
+}
+
+.diner11{
+  background-image: url(../images/wine-6.jpg);
+}
+
+.diner12{
+  background-image: url(../images/wine-7.jpg);
+}
+
+.diner13{
+  background-image: url(../images/wine-8.jpg);
+}
+
+.drink1{
+  background-image: url(../images/drink-1.jpg);
+}
+.drink2{
+  background-image: url(../images/drink-2.jpg);
+}
+.drink3{
+  background-image: url(../images/drink-3.jpg);
+}
+
+.drink4{
+  background-image: url(../images/drink-4.jpg);
+}
+
+.drink5{
+  background-image: url(../images/drink-5.jpg);
+}
+
+.drink6{
+  background-image: url(../images/drink-6.jpg);
+}
+
+.drink7{
+  background-image: url(../images/drink-7.jpg);
 }

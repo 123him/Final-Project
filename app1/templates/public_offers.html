@@ -58,9 +58,9 @@
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+					<li class="nav-item"><a href="/about/" class="nav-link">About</a></li>
+					<li class="nav-item"><a href="/menu/" class="nav-link">Menu</a></li>
 					
-		
-					<li class="nav-item"><a href="/" class="nav-link">Logout</a></li>
 
 				</ul>
 			</div>
@@ -68,45 +68,61 @@
 	</nav>
 	<!-- END nav -->
 	
-	 <section class="ftco-section ">
-		<div class="container">
-			<table class="table" >
-				<thead class="thead">
-					<th>Restaurant Name </th>
-                    <th>Menu Item Name</th>
-                    <th>Offer</th>
-					<th>Start Date</th>
-					<th>End Date</th>
-					<th>Details</th>
-					<th>Photo</th>
-					
-					
-				</thead>
-				<tbody  class="tbody">
-                    {% for x1 in x %}
-					<tr style="text-align: center;" >
-						<td>{{ x1.restaurant_name }}</td>
-						<td>{{ x1.menu_item_name }}</td>
-						<td>{{ x1.offer }}</td>
-						<td>{{ x1.start_date }}</td>
-						<td>{{ x1.end_date }}</td>
-                        <td>{{ x1.details }}</td>
-                        
-                        <td>
-                            <img src="{{ x1.photo }}" height="150px" width="150px" alt="">
-                        </td>
-						
-						
-					</tr>
-                    {% endfor %}
-					
-				</tbody>
-			</table>
-			      </div>
-			    </div>
-			  </div>
+	
+		<section class="hero-wrap hero-wrap-2 aimg"  data-stellar-background-ratio="0.5">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row no-gutters slider-text align-items-end justify-content-center">
+					<div class="col-md-9 ftco-animate text-center mb-5">
+						<h1 class="mb-2 bread"> Offers</h1>
+						<p class="breadcrumbs"><span class="mr-2"><a href="/">Home <i class="fa fa-chevron-right"></i></a></span> <span>offer <i class="fa fa-chevron-right"></i></span></p>
+					</div>
+				</div>
 			</div>
-		</section> 
+		</section>
+	
+	
+		
+			<div class="container"  style="margin-top: 40px;">
+				<table class="table" >
+					<thead class="thead">
+						<th>Restaurant Name </th>
+						<th>Menu Item Name</th>
+						<th>Offer</th>
+						<th>Start Date</th>
+						<th>End Date</th>
+						<th>Details</th>
+						<th>Status</th>
+						<th>Photo</th>
+						<th> </th>
+						
+						
+					</thead>
+					<tbody  class="tbody">
+						{% for y1 in y %}
+						<tr style="text-align: center;" >
+							<td>{{ y1.restaurant_name }}</td>
+							<td>{{ y1.menu_item_name }}</td>
+							<td>{{ y1.offer }}</td>
+							<td>{{ y1.start_date }}</td>
+							<td>{{ y1.end_date }}</td>
+							<td>{{ y1.details }}</td>
+							<td>{{ y1.status }}</td>
+							<td>
+								<img src="{{ y1.photo }}" height="150px" width="150px" alt="">
+							</td>
+							<td><a href="/res_update_offers/{{y1.id}}">Update</a> <br> <a href="/res_delete_offers/{{y1.id}}">Delete</a></td>
+							
+						</tr>
+						{% endfor %}
+						
+					</tbody>
+				</table>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			
 
 		<footer class="ftco-footer ftco-no-pb ftco-section">
 			<div class="container">
