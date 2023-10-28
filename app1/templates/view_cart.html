@@ -57,7 +57,7 @@
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item"><a href="/restaurentHome/" class="nav-link">Home</a></li>
+					<li class="nav-item"><a href="/view_restaurant/" class="nav-link">Home</a></li>
 					
 					<!-- <li class="nav-item"><a href="/" class="nav-link">Contact</a></li>
 					
@@ -75,7 +75,7 @@
 	</nav>
 	<!-- END nav -->
 	
-	<section class="hero-wrap hero-wrap-2 aimg"  data-stellar-background-ratio="0.5">
+	<section class="hero-wrap hero-wrap-2 aimg8"  data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row no-gutters slider-text align-items-end justify-content-center">
@@ -91,6 +91,7 @@
 		<div class="container" style="margin-top: 40px;">
 			<table class="table" >
 				<thead class="thead">
+					<th>Username</th>
 					<th>Restaurant Name </th>
                     <th>Menu Name</th>
                     <th>Menu Item Name</th>
@@ -105,6 +106,7 @@
 				<tbody  class="tbody">
                     {% for x1 in x %}
 					<tr style="text-align: center;" >
+						<td>{{ x1.username }}</td>
 						<td>{{ x1.restaurant_name }}</td>
 						<td>{{ x1.menu_name }}</td>
                         <td>{{ x1.menu_item_name }}</td>

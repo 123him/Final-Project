@@ -92,7 +92,7 @@
 					<form action="/order1/" method="post" enctype="multipart/form-data" class="appointment-form">
 						{% csrf_token %}
 						<h3 class="mb-3" >oRDER Item</h3>
-            
+						<input type="text" value="{{x.id}}" name="id" hidden> 
 						<div class="row">
 							<div class="col-md-12">
 								<div class="form-group" >
@@ -125,25 +125,25 @@
 						
 
                             
-							<div class="col-md-12">
+							<!-- <div class="col-md-12">
 								<div class="form-group" >
 									<input type="text" class="form-control" placeholder="Status" name="status">
 								</div>
-							</div>
+							</div> -->
 
-                            <!-- <div class="col-md-12">
+                            <div class="col-md-12">
 								<div class="form-group" >
                                     <label for=""  style="color: white; margin-left: 12px;">Payment Mode</label>
                                         <select class="form-control" name="Payment" >
                              
-                                            <option  value="Net Banking">Net Banking</option>
-                                            <option value="UPI(GPay/Paytm/PhonePe)">UPI(GPay/Paytm/PhonePe)</option>
-                                            <option value="Debit/Credit Card">Debit/Credit Card</option>
-                                            <option value="Cash On Delivery">Cash On Delivery</option>
+                                            <option style="background-color: cornflowerblue;" value="Net Banking">Net Banking</option>
+                                            <option style="background-color: cornflowerblue;" value="UPI(GPay/Paytm/PhonePe)">UPI(GPay/Paytm/PhonePe)</option>
+                                            <option style="background-color: cornflowerblue;" value="Debit/Credit Card">Debit/Credit Card</option>
+                                            <option style="background-color: cornflowerblue;" value="Cash On Delivery">Cash On Delivery</option>
                                         </select>
                                         
                                 </div>
-                            </div> -->
+                            </div>
                             
                             <div class="col-md-12">
 								<div class="form-group" >
