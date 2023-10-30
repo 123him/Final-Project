@@ -83,6 +83,7 @@ urlpatterns = [
     path('order_delete/<int:id>',views.orderdel),
     path('resconfirm_order/',views.resconfirm_order),
     path('rescanceled_order/',views.rescanceled_order),
+    path('out_delivery/<int:id>',views.out_for_delivery)
    
     # path('cancelled_order/',views.cancel_order),
     

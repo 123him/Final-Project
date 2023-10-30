@@ -5,6 +5,7 @@ from app1.models import user_account,restaurant_account,tbl_accounts,food_menu,f
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.files.storage import FileSystemStorage
+import datetime
 
 # Create your views here.
 def index(request):
@@ -509,7 +510,7 @@ def order1(request):
     odr3.username=request.POST.get('user')
     odr3.menu_item_name=request.POST.get('item')
     odr3.resturant_name=request.POST.get('restaurant')
-    odr3.order_date=request.POST.get('order_date')
+    odr3.order_date=datetime.datetime.today()
     odr3.status="in-order"
     odr3.payment_mode=request.POST.get('Payment')
     odr3.total_price=request.POST.get('price')
@@ -533,7 +534,7 @@ def user_view_order(request):
 
 def userconfirm_order(request):
     a=request.session['username']
-    b=tbl_order.objects.filter(status='order-approved')
+    b=tbl_order.objects.filter(status__in=('order-approved','out for delivery'))
     return render(request,'userconfirm_order.html',{'x':b})
 
 def usercanceled_order(request):
@@ -562,7 +563,7 @@ def orderdel(request,id):
 
 def resconfirm_order(request):
     a=request.session['username']
-    b=tbl_order.objects.filter(status='order-approved')
+    b=tbl_order.objects.filter(status__in=('order-approved','out for delivery'))
 
     return render(request,'resconfirm_order.html',{'x':b})
 
@@ -570,6 +571,12 @@ def rescanceled_order(request):
     a=request.session['username']
     b=tbl_order.objects.filter(status='order-cancelled')
     return render(request,'rescancel_order.html',{'y':b})
+
+def out_for_delivery(request,id):
+    a=tbl_order.objects.get(id=id)
+    a.status='out for delivery'
+    a.save()
+    return redirect('/resconfirm_order/')
 
 
 # # def user_view_order(request):
